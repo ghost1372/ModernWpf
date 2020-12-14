@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/AutoSuggestBox.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/ControlExample.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/FlyoutPresenter.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/ListView.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/GridView.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/HyperlinkButton.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/MenuFlyout.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/NavigationView.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/RadioButtons.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/SplitView.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/ToggleSwitch.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

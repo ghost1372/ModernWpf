@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+	<TargetFrameworks>netcoreapp3.0;netcoreapp3.1;net5.0-windows;net45;net462;net47;net48</TargetFrameworks>
+	<UseWPF>true</UseWPF>
+	<LangVersion>8.0</LangVersion>
+	<MSBuildWarningsAsMessages>NETSDK1138</MSBuildWarningsAsMessages>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageId>ModernWpf.Controls</PackageId>
+	<Authors>Mahdi Hosseini</Authors>
+	<Product>ModernWpf</Product>
+	<Description>This project is based on the original version (https://github.com/Kinnara/ModernWpf) 
+Dependency on WinRT has been removed
+
+Available Controls and Styles:
+AutoSuggestBox
+Flyout
+ListView
+GridView
+MenuFlyout
+NavigationView
+SplitView
+ProgressBar
+Repeater
+Light/Dark/HighContrast Theme</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<NoWarn>4130</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModernWpf\ModernWpf.csproj" />
+  </ItemGroup>
+	<ItemGroup Condition="!$(DefineConstants.Contains('NET47_OR_NEWER'))">
+		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<Page Remove="Properties\DesignTimeResources.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Properties\DesignTimeResources.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</None>
+	</ItemGroup>
+
+</Project>

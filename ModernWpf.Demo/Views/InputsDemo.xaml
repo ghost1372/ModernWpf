@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="ModernWpf.Demo.Views.InputsDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             mc:Ignorable="d">
+    <ui:SimpleStackPanel Margin="20" Spacing="10">
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="New" InputGestureText="Ctrl+N" />
+                <MenuItem Header="Open..." InputGestureText="Ctrl+O" />
+                <MenuItem Header="Save" InputGestureText="Ctrl+S" />
+                <MenuItem Header="Exit" InputGestureText="Ctrl+E" />
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" />
+                <MenuItem Header="Cut" InputGestureText="Ctrl+X" />
+                <MenuItem Header="Copy" InputGestureText="Ctrl+C" />
+                <MenuItem Header="Paste" InputGestureText="Ctrl+V" />
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" InputGestureText="Ctrl+I" />
+            </MenuItem>
+        </Menu>
+        <ui:SimpleStackPanel Orientation="Horizontal" Spacing="10">
+            <ComboBox Width="200" ui:ControlHelper.Header="Colors" ui:ControlHelper.PlaceholderText="Pick a Item">
+                <ComboBoxItem Content="Item 1"/>
+                <ComboBoxItem Content="Item 2"/>
+                <ComboBoxItem Content="Item 3"/>
+                <ComboBoxItem Content="Item 4"/>
+            </ComboBox>
+            <ComboBox ui:ControlHelper.PlaceholderText="Pick a Item" x:Name="Combo2" ui:ControlHelper.Header="Virtualized" Width="200">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+        </ui:SimpleStackPanel>
+        <ui:AutoSuggestBox HorizontalAlignment="Left" Width="200" ui:ControlHelper.Header="Search Box" PlaceholderText="Search..." QueryIcon="find"/>
+        <ui:SimpleStackPanel Spacing="10" Orientation="Horizontal">
+            <ui:SimpleStackPanel Spacing="10">
+                <CheckBox Content="CheckBox"/>
+                <ui:RadioButtons x:Name="Options" Header="Options:">
+                    <RadioButton x:Name="Option1RadioButton" Content="Option 1" />
+                    <RadioButton x:Name="Option2RadioButton" Content="Option 2" />
+                    <RadioButton x:Name="Option3RadioButton" Content="Option 3" />
+                </ui:RadioButtons>
+            </ui:SimpleStackPanel>
+            <GroupBox Margin="100,0" Header="Screen">
+                <StackPanel>
+                    <TextBlock Margin="0,10"
+                        Text="On battery power, turn off after"/>
+                    <ComboBox>
+                        <ComboBoxItem IsSelected="True">5 minutes</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock Margin="0,10"
+                        Text="When plugged in, turn off after" />
+                    <ComboBox>
+                        <ComboBoxItem IsSelected="True">10 minutes</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </GroupBox>
+        </ui:SimpleStackPanel>
+        <Grid>
+            <ToggleButton x:Name="Control1" Content="Open/close popup" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Popup x:Name="Popup1" AllowsTransparency="True" Placement="Absolute" PlacementTarget="{Binding ElementName=Control1}" IsOpen="{Binding ElementName=Control1, Path=IsChecked}">
+                <Border>
+                    <ui:ThemeShadowChrome>
+                        <Border Background="{DynamicResource SystemControlTransientBackgroundBrush}" BorderBrush="{DynamicResource SystemControlHighlightAccentBrush}" BorderThickness="5"
+                                Width="100" Height="100" />
+                    </ui:ThemeShadowChrome>
+                </Border>
+            </Popup>
+        </Grid>
+    </ui:SimpleStackPanel>
+</UserControl>

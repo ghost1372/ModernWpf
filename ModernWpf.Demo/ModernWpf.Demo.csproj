@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Contacts.txt" />
+    <None Remove="Assets\SampleMedia\cliff.jpg" />
+    <None Remove="Assets\SampleMedia\LandscapeImage1.jpg" />
+    <None Remove="Assets\SampleMedia\LandscapeImage2.jpg" />
+    <None Remove="Assets\SampleMedia\LandscapeImage3.jpg" />
+    <None Remove="Assets\SampleMedia\LandscapeImage4.jpg" />
+    <None Remove="Assets\SampleMedia\LandscapeImage5.jpg" />
+    <None Remove="Assets\SampleMedia\LandscapeImage6.jpg" />
+    <None Remove="Assets\SampleMedia\LandscapeImage7.jpg" />
+    <None Remove="Assets\SampleMedia\LandscapeImage8.jpg" />
+    <None Remove="Assets\SampleMedia\rainier.jpg" />
+    <None Remove="Assets\TabViewIcons\cmd.png" />
+    <None Remove="Assets\TabViewIcons\linux.png" />
+    <None Remove="Assets\TabViewIcons\powershell.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModernWpf.Controls\ModernWpf.Controls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Contacts.txt" />
+    <Resource Include="Assets\SampleMedia\cliff.jpg" />
+    <Resource Include="Assets\SampleMedia\LandscapeImage1.jpg" />
+    <Resource Include="Assets\SampleMedia\LandscapeImage2.jpg" />
+    <Resource Include="Assets\SampleMedia\LandscapeImage3.jpg" />
+    <Resource Include="Assets\SampleMedia\LandscapeImage4.jpg" />
+    <Resource Include="Assets\SampleMedia\LandscapeImage5.jpg" />
+    <Resource Include="Assets\SampleMedia\LandscapeImage6.jpg" />
+    <Resource Include="Assets\SampleMedia\LandscapeImage7.jpg" />
+    <Resource Include="Assets\SampleMedia\LandscapeImage8.jpg" />
+    <Resource Include="Assets\SampleMedia\rainier.jpg" />
+    <Resource Include="Assets\TabViewIcons\cmd.png" />
+    <Resource Include="Assets\TabViewIcons\linux.png" />
+    <Resource Include="Assets\TabViewIcons\powershell.png" />
+  </ItemGroup>
+
+</Project>

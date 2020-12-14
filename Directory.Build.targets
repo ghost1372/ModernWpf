@@ -1,0 +1,13 @@
+﻿<Project>
+  <PropertyGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework' and $([MSBuild]::VersionGreaterThanOrEquals($(TargetFrameworkVersion), '4.6.2')) or
+                            '$(TargetFrameworkIdentifier)' == '.NETCoreApp'">
+    <DefineConstants>$(DefineConstants);NET462_OR_NEWER</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework' and $([MSBuild]::VersionGreaterThanOrEquals($(TargetFrameworkVersion), '4.8')) or
+                            '$(TargetFrameworkIdentifier)' == '.NETCoreApp'">
+    <DefineConstants>$(DefineConstants);NET48_OR_NEWER</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' and $([MSBuild]::VersionGreaterThanOrEquals($(TargetFrameworkVersion), '3.0'))">
+    <DefineConstants>$(DefineConstants);Core3_0_OR_NEWER</DefineConstants>
+  </PropertyGroup>
+</Project>
