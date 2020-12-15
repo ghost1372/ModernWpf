@@ -1,8 +1,6 @@
 ﻿<UserControl x:Class="ModernWpf.Demo.Views.RepeaterDemo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:l="clr-namespace:ModernWpf.Demo.Views">
     <UserControl.Resources>
         <l:ColorToBrushConverter x:Key="ColorToBrushConverter" />
@@ -19,39 +17,6 @@
                     Height="24"
                     HorizontalAlignment="Left" />
             </Border>
-        </DataTemplate>
-
-        <DataTemplate x:Key="VerticalBarTemplate">
-            <Border
-                Tag="{DynamicResource SystemChromeLowColor}"
-                Background="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource ColorToBrushConverter}}"
-                Height="{Binding MaxHeight, Mode=OneTime}">
-                <Rectangle
-                    Tag="{DynamicResource SystemAccentColor}"
-                    Fill="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource ColorToBrushConverter}}"
-                    Height="{Binding Height, Mode=OneTime}"
-                    Width="48"
-                    VerticalAlignment="Top" />
-            </Border>
-        </DataTemplate>
-
-        <DataTemplate x:Key="CircularTemplate">
-            <Grid>
-                <Ellipse
-                    Tag="{DynamicResource SystemChromeLowColor}"
-                    Fill="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource ColorToBrushConverter}}"
-                    Height="{Binding MaxDiameter, Mode=OneTime}"
-                    Width="{Binding MaxDiameter, Mode=OneTime}"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center" />
-                <Ellipse
-                    Tag="{DynamicResource SystemAccentColor}"
-                    Fill="{Binding Tag, RelativeSource={RelativeSource Self}, Converter={StaticResource ColorToBrushConverter}}"
-                    Height="{Binding Diameter, Mode=OneTime}"
-                    Width="{Binding Diameter, Mode=OneTime}"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center" />
-            </Grid>
         </DataTemplate>
 
         <DataTemplate x:Key="NormalItemTemplate">
@@ -122,22 +87,7 @@
             x:Key="VerticalStackLayout"
             Orientation="Vertical"
             Spacing="8" />
-        <ui:StackLayout
-            x:Key="HorizontalStackLayout"
-            Orientation="Horizontal"
-            Spacing="8" />
-        <ui:UniformGridLayout
-            x:Key="UniformGridLayout"
-            MinRowSpacing="8"
-            MinColumnSpacing="8" />
 
-     
-        <ui:UniformGridLayout
-            x:Key="UniformGridLayout2"
-            MinItemWidth="108"
-            MinItemHeight="108"
-            MinRowSpacing="12"
-            MinColumnSpacing="12" />
 
         <l:MyDataTemplateSelector
             x:Key="MyDataTemplateSelector"
@@ -188,7 +138,6 @@
         Style="{StaticResource TabControlPivotStyle}"
         Padding="12,0">
         <TabControl.Resources>
-            <Thickness x:Key="PivotItemMargin">12,0,12,20</Thickness>
         </TabControl.Resources>
 
         <TabItem Header="Overview">
@@ -324,7 +273,6 @@
                 HeaderText="StackLayout">
                 <ui:ControlExample.Resources>
                     <ui:StackLayout x:Key="stackLayout" />
-                    <l:SpacingConverter x:Key="SpacingConverter" />
                 </ui:ControlExample.Resources>
 
                 <ui:ItemsRepeaterScrollHost>
@@ -368,7 +316,9 @@
                                 <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
                                 <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Source={StaticResource uniformGridLayout}, Path=Orientation}" Value="Vertical">
+                                    <DataTrigger
+                                        Binding="{Binding Source={StaticResource uniformGridLayout}, Path=Orientation}"
+                                        Value="Vertical">
                                         <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
                                         <Setter Property="VerticalScrollBarVisibility" Value="Disabled" />
                                     </DataTrigger>
@@ -421,7 +371,9 @@
                                 <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
                                 <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Source={StaticResource flowLayout}, Path=Orientation}" Value="Vertical">
+                                    <DataTrigger
+                                        Binding="{Binding Source={StaticResource flowLayout}, Path=Orientation}"
+                                        Value="Vertical">
                                         <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
                                         <Setter Property="VerticalScrollBarVisibility" Value="Disabled" />
                                     </DataTrigger>
@@ -443,7 +395,7 @@
                                 Header="Orientation"
                                 ItemsSource="{Binding Source={x:Type Orientation}, Converter={StaticResource EnumValuesConverter}}"
                                 SelectedItem="{Binding Source={StaticResource flowLayout}, Path=Orientation}" />
-                           
+
                             <ui:RadioButtons
                                 Header="LineAlignment"
                                 ItemsSource="{Binding Source={x:Type ui:FlowLayoutLineAlignment}, Converter={StaticResource EnumValuesConverter}}"

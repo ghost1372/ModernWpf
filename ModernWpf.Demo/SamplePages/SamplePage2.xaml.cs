@@ -3,7 +3,7 @@
 namespace ModernWpf.Demo.SamplePages
 {
     /// <summary>
-    /// Interaction logic for SamplePage2.xaml
+    ///     Interaction logic for SamplePage2.xaml
     /// </summary>
     public partial class SamplePage2 : UserControl
     {

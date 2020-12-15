@@ -3,7 +3,7 @@
 namespace ModernWpf.Demo.Views
 {
     /// <summary>
-    /// Interaction logic for ProgressBar
+    ///     Interaction logic for ProgressBar
     /// </summary>
     public partial class ProgressBarDemo : UserControl
     {

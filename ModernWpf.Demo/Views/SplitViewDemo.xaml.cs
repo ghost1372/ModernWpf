@@ -1,30 +1,28 @@
-﻿using ModernWpf.Controls;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using ModernWpf.Controls;
 
 namespace ModernWpf.Demo.Views
 {
     /// <summary>
-    /// Interaction logic for SplitViewDemo.xaml
+    ///     Interaction logic for SplitViewDemo.xaml
     /// </summary>
     public partial class SplitViewDemo : UserControl
     {
-        private readonly ObservableCollection<NavLink> _navLinks = new ObservableCollection<NavLink>()
-        {
-            new NavLink() { Label = "People", Symbol = Symbol.People  },
-            new NavLink() { Label = "Globe", Symbol = Symbol.Globe },
-            new NavLink() { Label = "Message", Symbol = Symbol.Message },
-            new NavLink() { Label = "Mail", Symbol = Symbol.Mail },
-        };
-
-        public ObservableCollection<NavLink> NavLinks => _navLinks;
-
         public SplitViewDemo()
         {
             InitializeComponent();
         }
+
+        public ObservableCollection<NavLink> NavLinks { get; } = new ObservableCollection<NavLink>
+        {
+            new NavLink {Label = "People", Symbol = Symbol.People},
+            new NavLink {Label = "Globe", Symbol = Symbol.Globe},
+            new NavLink {Label = "Message", Symbol = Symbol.Message},
+            new NavLink {Label = "Mail", Symbol = Symbol.Mail}
+        };
 
         private void togglePaneButton_Click(object sender, RoutedEventArgs e)
         {
@@ -51,13 +49,9 @@ namespace ModernWpf.Demo.Views
         {
             var ts = sender as ToggleSwitch;
             if (ts.IsOn)
-            {
                 splitView.PanePlacement = SplitViewPanePlacement.Right;
-            }
             else
-            {
                 splitView.PanePlacement = SplitViewPanePlacement.Left;
-            }
         }
 
         private void NavLinksList_ItemClick(object sender, ItemClickEventArgs e)
@@ -67,14 +61,15 @@ namespace ModernWpf.Demo.Views
 
         private void displayModeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            splitView.DisplayMode = (SplitViewDisplayMode)Enum.Parse(typeof(SplitViewDisplayMode), (e.AddedItems[0] as ComboBoxItem).Content.ToString());
+            splitView.DisplayMode = (SplitViewDisplayMode) Enum.Parse(typeof(SplitViewDisplayMode),
+                (e.AddedItems[0] as ComboBoxItem).Content.ToString());
         }
 
         private void paneBackgroundCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var colorString = (e.AddedItems[0] as ComboBoxItem).Content.ToString();
 
-            VisualStateManager.GoToElementState((FrameworkElement)Content, colorString, false);
+            VisualStateManager.GoToElementState((FrameworkElement) Content, colorString, false);
         }
     }
 

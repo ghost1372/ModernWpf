@@ -5,8 +5,8 @@
              xmlns:ui="http://schemas.modernwpf.com/2019">
     <ui:ControlExample Margin="10" HeaderText="Button">
         <StackPanel Orientation="Horizontal">
-            <Button Content="Default Button"/>
-            <Button Margin="10,0" Content="Accent Button" Style="{StaticResource AccentButtonStyle}"/>
+            <Button Content="Default Button" />
+            <Button Margin="10,0" Content="Accent Button" Style="{StaticResource AccentButtonStyle}" />
             <ToggleButton Content="Toggle Button" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </StackPanel>
     </ui:ControlExample>

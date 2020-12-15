@@ -4,7 +4,7 @@ using System.Windows.Controls;
 namespace ModernWpf.Demo.Views
 {
     /// <summary>
-    /// Interaction logic for Inputs.xaml
+    ///     Interaction logic for Inputs.xaml
     /// </summary>
     public partial class InputsDemo : UserControl
     {

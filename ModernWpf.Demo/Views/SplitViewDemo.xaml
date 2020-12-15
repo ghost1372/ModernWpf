@@ -1,8 +1,6 @@
 ﻿<UserControl x:Class="ModernWpf.Demo.Views.SplitViewDemo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ui="http://schemas.modernwpf.com/2019"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
     <UserControl.Resources>
@@ -26,7 +24,8 @@
                 <VisualState x:Name="SystemControlBackgroundChromeMediumLowBrush" />
                 <VisualState x:Name="Red">
                     <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="splitView" Storyboard.TargetProperty="PaneBackground">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="splitView"
+                                                       Storyboard.TargetProperty="PaneBackground">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <SolidColorBrush Color="Red" />
@@ -37,7 +36,8 @@
                 </VisualState>
                 <VisualState x:Name="Blue">
                     <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="splitView" Storyboard.TargetProperty="PaneBackground">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="splitView"
+                                                       Storyboard.TargetProperty="PaneBackground">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <SolidColorBrush Color="Blue" />
@@ -48,7 +48,8 @@
                 </VisualState>
                 <VisualState x:Name="Green">
                     <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="splitView" Storyboard.TargetProperty="PaneBackground">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="splitView"
+                                                       Storyboard.TargetProperty="PaneBackground">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <SolidColorBrush Color="Green" />

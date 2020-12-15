@@ -8,7 +8,7 @@ namespace ModernWpf.Demo.Tools
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return Enum.GetValues((Type)value);
+            return Enum.GetValues((Type) value);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

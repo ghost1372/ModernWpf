@@ -3,7 +3,7 @@
 namespace ModernWpf.Demo.Views
 {
     /// <summary>
-    /// Interaction logic for Button
+    ///     Interaction logic for Button
     /// </summary>
     public partial class ButtonDemo : UserControl
     {

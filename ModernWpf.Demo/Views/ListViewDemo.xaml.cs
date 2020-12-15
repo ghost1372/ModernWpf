@@ -11,7 +11,7 @@ using System.Windows.Controls;
 namespace ModernWpf.Demo.Views
 {
     /// <summary>
-    /// Interaction logic for ListView.xaml
+    ///     Interaction logic for ListView.xaml
     /// </summary>
     public partial class ListViewDemo : UserControl
     {
@@ -28,13 +28,6 @@ namespace ModernWpf.Demo.Views
 
         public class Contact : INotifyPropertyChanged
         {
-            #region Properties
-            public string FirstName { get; private set; }
-            public string LastName { get; private set; }
-            public string Company { get; private set; }
-            public string Name => FirstName + " " + LastName;
-            #endregion
-
             public Contact(string firstName, string lastName, string company)
             {
                 FirstName = firstName;
@@ -44,25 +37,30 @@ namespace ModernWpf.Demo.Views
 
             public event PropertyChangedEventHandler PropertyChanged;
 
+            #region Properties
+
+            public string FirstName { get; }
+            public string LastName { get; }
+            public string Company { get; private set; }
+            public string Name => FirstName + " " + LastName;
+
+            #endregion
+
             #region Public Methods
+
             public static Task<ObservableCollection<Contact>> GetContactsAsync()
             {
                 IList<string> lines = new List<string>();
                 var resourceStream = Application.GetResourceStream(new Uri("/Assets/Contacts.txt", UriKind.Relative));
                 using (var reader = new StreamReader(resourceStream.Stream))
                 {
-                    while (!reader.EndOfStream)
-                    {
-                        lines.Add(reader.ReadLine());
-                    }
+                    while (!reader.EndOfStream) lines.Add(reader.ReadLine());
                 }
 
                 var contacts = new ObservableCollection<Contact>();
 
-                for (int i = 0; i < lines.Count; i += 3)
-                {
+                for (var i = 0; i < lines.Count; i += 3)
                     contacts.Add(new Contact(lines[i], lines[i + 1], lines[i + 2]));
-                }
 
                 return Task.FromResult(contacts);
             }
@@ -70,9 +68,10 @@ namespace ModernWpf.Demo.Views
             public static async Task<ObservableCollection<GroupInfoList>> GetContactsGroupedAsync()
             {
                 var query = from item in await GetContactsAsync()
-                            group item by item.LastName.Substring(0, 1).ToUpper() into g
-                            orderby g.Key
-                            select new GroupInfoList(g) { Key = g.Key };
+                    group item by item.LastName.Substring(0, 1).ToUpper()
+                    into g
+                    orderby g.Key
+                    select new GroupInfoList(g) {Key = g.Key};
 
                 return new ObservableCollection<GroupInfoList>(query);
             }
@@ -87,6 +86,7 @@ namespace ModernWpf.Demo.Views
                 Company = company;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Company)));
             }
+
             #endregion
         }
 
@@ -95,6 +95,7 @@ namespace ModernWpf.Demo.Views
             public GroupInfoList(IEnumerable<object> items) : base(items)
             {
             }
+
             public object Key { get; set; }
         }
     }

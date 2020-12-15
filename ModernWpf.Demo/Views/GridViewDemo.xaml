@@ -1,71 +1,32 @@
 ﻿<UserControl x:Class="ModernWpf.Demo.Views.GridViewDemo"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:ui="http://schemas.modernwpf.com/2019" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <DataTemplate x:Key="ImageTemplate">
-            <Image Stretch="UniformToFill" Source="{Binding ImageLocation, Mode=OneTime}" AutomationProperties.Name="{Binding Title, Mode=OneTime}"
-                Width="190" Height="130" />
-        </DataTemplate>
-
-        <DataTemplate x:Key="IconTextTemplate">
-            <Grid AutomationProperties.Name="{Binding Title}" Width="280" MinHeight="160">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Image x:Name="image" Width="18" Margin="0,4,0,0" VerticalAlignment="Top" Source="{Binding ImageLocation}" Stretch="Uniform" />
-                <TextBlock x:Name="title" Style="{StaticResource BaseTextBlockStyle}" Margin="8,0,0,0" Text="{Binding Title}" Grid.Column="1" VerticalAlignment="Top" />
-                <TextBlock Text="{Binding Description}" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" Margin="0,4,8,0" Grid.Row="1"
-                    Grid.ColumnSpan="2" TextTrimming="WordEllipsis" />
-            </Grid>
-        </DataTemplate>
-
-        <DataTemplate x:Key="ImageTextTemplate">
-            <Grid AutomationProperties.Name="{Binding Title}" Width="280">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Image Source="{Binding ImageLocation}" Height="100" Stretch="Fill" VerticalAlignment="Top" />
-                <StackPanel Grid.Column="1" Margin="8,0,0,8">
-                    <TextBlock Text="{Binding Title}" Style="{DynamicResource SubtitleTextBlockStyle}" Margin="0,0,0,8" />
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Views}" Style="{DynamicResource CaptionTextBlockStyle}" />
-                        <TextBlock Text=" Views " Style="{DynamicResource CaptionTextBlockStyle}" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Likes}" Style="{DynamicResource CaptionTextBlockStyle}" />
-                        <TextBlock Text=" Likes" Style="{DynamicResource CaptionTextBlockStyle}" />
-                    </StackPanel>
-                </StackPanel>
-            </Grid>
-        </DataTemplate>
-
-        <DataTemplate x:Key="TextTemplate">
-            <StackPanel Width="240" Orientation="Horizontal">
-                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Margin="8,0,0,0" Text="{Binding Title}" />
-            </StackPanel>
+            <Image Stretch="UniformToFill" Source="{Binding ImageLocation, Mode=OneTime}"
+                   AutomationProperties.Name="{Binding Title, Mode=OneTime}"
+                   Width="190" Height="130" />
         </DataTemplate>
 
         <DataTemplate x:Key="ImageOverlayTemplate">
             <Grid Width="100" AutomationProperties.Name="{Binding Title}">
                 <Image Source="{Binding ImageLocation}" Stretch="UniformToFill" />
-                <Border Height="40" VerticalAlignment="Bottom" Padding="5,1,5,1" Background="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Opacity=".75">
+                <Border Height="40" VerticalAlignment="Bottom" Padding="5,1,5,1"
+                        Background="{DynamicResource SystemControlBackgroundBaseMediumBrush}" Opacity=".75">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding Title}" Foreground="{DynamicResource SystemControlForegroundAltHighBrush}" />
+                        <TextBlock Text="{Binding Title}"
+                                   Foreground="{DynamicResource SystemControlForegroundAltHighBrush}" />
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Likes}" Style="{DynamicResource CaptionTextBlockStyle}" Foreground="{DynamicResource SystemControlForegroundAltHighBrush}" />
-                            <TextBlock Text=" Likes" Style="{DynamicResource CaptionTextBlockStyle}" Foreground="{DynamicResource SystemControlForegroundAltHighBrush}" />
+                            <TextBlock Text="{Binding Likes}" Style="{DynamicResource CaptionTextBlockStyle}"
+                                       Foreground="{DynamicResource SystemControlForegroundAltHighBrush}" />
+                            <TextBlock Text=" Likes" Style="{DynamicResource CaptionTextBlockStyle}"
+                                       Foreground="{DynamicResource SystemControlForegroundAltHighBrush}" />
                         </StackPanel>
                     </StackPanel>
                 </Border>
@@ -79,8 +40,10 @@
                 <StackPanel>
                     <TextBlock Margin="0,0,0,15">
                         This is a basic GridView that has the full source code below.<LineBreak />
-                        Other samples on this page display only the additional markup needed to customize the specific GridView.</TextBlock>
-                    <ui:GridView x:Name="BasicGridView" ItemTemplate="{StaticResource ImageTemplate}" IsItemClickEnabled="True" ItemClick="BasicGridView_ItemClick" SelectionMode="Single" />
+                        Other samples on this page display only the additional markup needed to customize the specific GridView.
+                    </TextBlock>
+                    <ui:GridView x:Name="BasicGridView" ItemTemplate="{StaticResource ImageTemplate}"
+                                 IsItemClickEnabled="True" ItemClick="BasicGridView_ItemClick" SelectionMode="Single" />
                     <TextBlock x:Name="ClickOutput0" Margin="8,8,0,0" />
                 </StackPanel>
             </ui:ControlExample>
@@ -99,7 +62,8 @@
 
                         <ui:GridView.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel Loaded="StyledGrid_InitWrapGrid" x:Name="MaxItemsWrapGrid" Orientation="Horizontal" />
+                                <WrapPanel Loaded="StyledGrid_InitWrapGrid" x:Name="MaxItemsWrapGrid"
+                                           Orientation="Horizontal" />
                             </ItemsPanelTemplate>
                         </ui:GridView.ItemsPanel>
 
@@ -114,9 +78,13 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <ui:GridView x:Name="ContentGridView" IsItemClickEnabled="{Binding IsChecked, ElementName=ItemClickCheckBox}" IsSelectionEnabled="{Binding IsChecked, ElementName=SelectionCheckBox}"
-                        IsMultiSelectCheckBoxEnabled="{Binding IsChecked, ElementName=MultiSelectCheckBoxCheckBox}" ItemClick="ContentGridView_ItemClick"
-                        ItemTemplate="{StaticResource ImageTemplate}" SelectionChanged="ContentGridView_SelectionChanged" FlowDirection="LeftToRight" />
+                    <ui:GridView x:Name="ContentGridView"
+                                 IsItemClickEnabled="{Binding IsChecked, ElementName=ItemClickCheckBox}"
+                                 IsSelectionEnabled="{Binding IsChecked, ElementName=SelectionCheckBox}"
+                                 IsMultiSelectCheckBoxEnabled="{Binding IsChecked, ElementName=MultiSelectCheckBoxCheckBox}"
+                                 ItemClick="ContentGridView_ItemClick"
+                                 ItemTemplate="{StaticResource ImageTemplate}"
+                                 SelectionChanged="ContentGridView_SelectionChanged" FlowDirection="LeftToRight" />
 
                     <StackPanel Grid.Row="1">
                         <TextBlock x:Name="ClickOutput" Margin="8,8,0,0" />
@@ -128,18 +96,28 @@
                     <StackPanel x:Name="Control2">
                         <StackPanel>
                             <TextBlock Margin="0,0,0,10" Text="ItemTemplate" />
-                            <RadioButton Checked="ItemTemplate_Checked" Content="Image" GroupName="Template" IsChecked="True" Tag="ImageTemplate" />
-                            <RadioButton Checked="ItemTemplate_Checked" Content="Icon/Text" GroupName="Template" Tag="IconTextTemplate" />
-                            <RadioButton Checked="ItemTemplate_Checked" Content="Image/Text" GroupName="Template" Tag="ImageTextTemplate" />
-                            <RadioButton Checked="ItemTemplate_Checked" Content="Text" GroupName="Template" Tag="TextTemplate" />
-                            <ToggleButton Margin="0,8,0,0" Click="FlowDirectionCheckBox_Click" Content="Reverse FlowDirection" />
+                            <RadioButton Checked="ItemTemplate_Checked" Content="Image" GroupName="Template"
+                                         IsChecked="True" Tag="ImageTemplate" />
+                            <RadioButton Checked="ItemTemplate_Checked" Content="Icon/Text" GroupName="Template"
+                                         Tag="IconTextTemplate" />
+                            <RadioButton Checked="ItemTemplate_Checked" Content="Image/Text" GroupName="Template"
+                                         Tag="ImageTextTemplate" />
+                            <RadioButton Checked="ItemTemplate_Checked" Content="Text" GroupName="Template"
+                                         Tag="TextTemplate" />
+                            <ToggleButton Margin="0,8,0,0" Click="FlowDirectionCheckBox_Click"
+                                          Content="Reverse FlowDirection" />
                             <TextBlock Margin="0,18,0,10" Text="GridView Properties" />
-                            <TextBlock TextWrapping="Wrap" FontSize="13" MaxWidth="150"  HorizontalAlignment="Left">
-                                Turning on IsItemClickEnabled will allow the user to click on an item (and print output below the GridView), regardless of selection mode.<LineBreak /></TextBlock>
-                            <CheckBox x:Name="ItemClickCheckBox" Click="ItemClickCheckBox_Click" Content="IsItemClickEnabled" />
-                            <CheckBox x:Name="SelectionCheckBox" Click="SelectionCheckBox_Click" Content="IsSelectionEnabled" IsChecked="True" />
+                            <TextBlock TextWrapping="Wrap" FontSize="13" MaxWidth="150" HorizontalAlignment="Left">
+                                Turning on IsItemClickEnabled will allow the user to click on an item (and print output below the GridView), regardless of selection mode.
+                                <LineBreak />
+                            </TextBlock>
+                            <CheckBox x:Name="ItemClickCheckBox" Click="ItemClickCheckBox_Click"
+                                      Content="IsItemClickEnabled" />
+                            <CheckBox x:Name="SelectionCheckBox" Click="SelectionCheckBox_Click"
+                                      Content="IsSelectionEnabled" IsChecked="True" />
                             <CheckBox x:Name="MultiSelectCheckBoxCheckBox" Content="IsMultiSelectCheckBoxEnabled" />
-                            <ComboBox Margin="0,12,0,0" ui:ControlHelper.Header="SelectionMode" SelectedIndex="0" SelectionChanged="SelectionModeComboBox_SelectionChanged">
+                            <ComboBox Margin="0,12,0,0" ui:ControlHelper.Header="SelectionMode" SelectedIndex="0"
+                                      SelectionChanged="SelectionModeComboBox_SelectionChanged">
                                 <sys:String>Single</sys:String>
                                 <sys:String>Multiple</sys:String>
                                 <sys:String>Extended</sys:String>

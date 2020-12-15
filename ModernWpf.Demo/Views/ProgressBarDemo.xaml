@@ -49,7 +49,7 @@
                         Margin="0,0,10,0" />
                 </StackPanel>
                 <ui:ControlExample.Options>
-                    <Slider x:Name="ProgressValue" Maximum="100"/>
+                    <Slider x:Name="ProgressValue" Maximum="100" />
                 </ui:ControlExample.Options>
             </ui:ControlExample>
         </ui:SimpleStackPanel>

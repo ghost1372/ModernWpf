@@ -1,11 +1,11 @@
-﻿using ModernWpf.Controls;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
+using ModernWpf.Controls;
 
 namespace ModernWpf.Demo.Views
 {
     /// <summary>
-    /// Interaction logic for Flyout.xaml
+    ///     Interaction logic for Flyout.xaml
     /// </summary>
     public partial class FlyoutDemo : UserControl
     {
@@ -16,11 +16,8 @@ namespace ModernWpf.Demo.Views
 
         private void DeleteConfirmation_Click(object sender, RoutedEventArgs e)
         {
-            Flyout f = FlyoutService.GetFlyout(Control1) as Flyout;
-            if (f != null)
-            {
-                f.Hide();
-            }
+            var f = FlyoutService.GetFlyout(Control1) as Flyout;
+            if (f != null) f.Hide();
         }
     }
 }
