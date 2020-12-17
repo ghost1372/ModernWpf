@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-	<TargetFrameworks>netcoreapp3.0;netcoreapp3.1;net5.0-windows;net45;net462;net47;net48</TargetFrameworks>
+	<TargetFrameworks>netcoreapp3.0;net5.0-windows;net45;net462</TargetFrameworks>
 	<UseWPF>true</UseWPF>
 	<LangVersion>8.0</LangVersion>
 	<MSBuildWarningsAsMessages>NETSDK1138</MSBuildWarningsAsMessages>
@@ -29,10 +29,6 @@ Dependency on WinRT has been removed</Description>
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="C:\Users\Mahdi\Desktop\icon.png">
-		  <Pack>True</Pack>
-		  <PackagePath></PackagePath>
-		</None>
 		<None Include="Properties\DesignTimeResources.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</None>
