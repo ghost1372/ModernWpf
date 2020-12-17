@@ -1,3 +1,7 @@
+[![nuget-version](https://img.shields.io/nuget/v/ModernWpfUis.svg)](https://www.nuget.org/packages/ModernWpfUis) 
+[![Nuget](https://img.shields.io/nuget/dt/ModernWpfUis)](https://www.nuget.org/packages/ModernWpfUis) 
+
+
 # ModernWPF UI Library
 Modern styles and controls for your WPF applications.
 
@@ -14,4 +18,33 @@ The official version is depends on WinRT, This version has removed this dependen
 - I am not responsible for bug fixes or adding new features. For such tasks, please contact the [original](https://github.com/Kinnara/ModernWpf) version.
 - If you have any other questions, you can contact us [here](https://github.com/ghost1372/ModernWpf/discussions)
 
-![Demo](https://user-images.githubusercontent.com/9213496/102108860-ad3dad80-3e48-11eb-84f8-49bb16624a5b.png)
+## Usage
+
+Step 1: Add a reference to ModernWpfUis or search for ModernWpfUis on the nuget; 
+
+```Install-Package ModernWpfUis```
+
+Step 2: Add code in App.xaml as follows:
+```XML
+xmlns:ui="http://schemas.modernwpf.com/2019">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemeResources />
+                <ui:XamlControlsResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+```
+See the [wiki](https://github.com/Kinnara/ModernWpf/wiki) for more information.
+
+## Screenshots
+![Overview of controls (dark theme)](https://raw.githubusercontent.com/Kinnara/ModernWpf/master/docs/images/Controls.Light.png)
+
+![Control palette](https://raw.githubusercontent.com/Kinnara/ModernWpf/master/docs/images/ControlPalette1.png)
+
+![NumberBox](https://raw.githubusercontent.com/Kinnara/ModernWpf/master/docs/images/NumberBox.png)
+
+![Calendar](https://raw.githubusercontent.com/Kinnara/ModernWpf/master/docs/images/Calendar.png)
+
+![Progress controls](https://raw.githubusercontent.com/Kinnara/ModernWpf/master/docs/images/Progress.png)
