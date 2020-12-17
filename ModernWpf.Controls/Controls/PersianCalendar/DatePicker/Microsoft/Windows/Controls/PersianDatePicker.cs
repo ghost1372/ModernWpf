@@ -1077,9 +1077,7 @@ namespace ModernWpf
             {
                 case DatePickerFormat.Short:
                     {
-
-                        //Fix for SelectedDate in xaml that double converted so we check if year is 3 number like 777 we convert date to gregorian 
-                        int year = pc.GetYear(d) % 100;
+                        int year = pc.GetYear(d);
                         int month = pc.GetMonth(d);
                         int day = pc.GetDayOfMonth(d);
 

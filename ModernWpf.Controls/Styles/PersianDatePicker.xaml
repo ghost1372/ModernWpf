@@ -89,6 +89,7 @@
     <Style x:Key="DefaultPersianDatePickerStyle" TargetType="modernWpf:PersianDatePicker">
         <Setter Property="Foreground" Value="{DynamicResource CalendarDatePickerForeground}" />
         <Setter Property="IsTodayHighlighted" Value="True" />
+        <Setter Property="SelectedDateFormat" Value="Short"/>
         <Setter Property="CalendarStyle" Value="{DynamicResource PersianDatePickerCalendarStyle}" />
         <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrush}" />
