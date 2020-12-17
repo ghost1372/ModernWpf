@@ -8,7 +8,7 @@ Modern styles and controls for your WPF applications.
 > **_NOTE:_**  This version is an unofficial version of the [ModernWPF](https://github.com/Kinnara/ModernWpf)
 
 ## Why was this version created?
-The official version is depends on WinRT, This version has removed this dependency and the size of the output file will be less and there will be no need for SDK contract. 
+The official version is depends on WinRT, This version has removed this dependency and the size of the output file will be less and there will be no need for SDK contract. also this version includes some controls and features that are not included in the original project [for example support for Persian Calendar and PersianDatePicker, More Controls and More Styles]
 
 > **_NOTE:_**  WinRT based features will not work in this version
 
