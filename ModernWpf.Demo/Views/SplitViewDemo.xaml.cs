@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ModernWpf.Controls;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using ModernWpf.Controls;
 
 namespace ModernWpf.Demo.Views
 {
@@ -49,9 +49,13 @@ namespace ModernWpf.Demo.Views
         {
             var ts = sender as ToggleSwitch;
             if (ts.IsOn)
+            {
                 splitView.PanePlacement = SplitViewPanePlacement.Right;
+            }
             else
+            {
                 splitView.PanePlacement = SplitViewPanePlacement.Left;
+            }
         }
 
         private void NavLinksList_ItemClick(object sender, ItemClickEventArgs e)
@@ -61,7 +65,7 @@ namespace ModernWpf.Demo.Views
 
         private void displayModeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            splitView.DisplayMode = (SplitViewDisplayMode) Enum.Parse(typeof(SplitViewDisplayMode),
+            splitView.DisplayMode = (SplitViewDisplayMode)Enum.Parse(typeof(SplitViewDisplayMode),
                 (e.AddedItems[0] as ComboBoxItem).Content.ToString());
         }
 
@@ -69,7 +73,7 @@ namespace ModernWpf.Demo.Views
         {
             var colorString = (e.AddedItems[0] as ComboBoxItem).Content.ToString();
 
-            VisualStateManager.GoToElementState((FrameworkElement) Content, colorString, false);
+            VisualStateManager.GoToElementState((FrameworkElement)Content, colorString, false);
         }
     }
 

@@ -1,6 +1,6 @@
-﻿using System.Windows;
+﻿using ModernWpf.Controls;
+using System.Windows;
 using System.Windows.Controls;
-using ModernWpf.Controls;
 
 namespace ModernWpf.Demo.Views
 {
@@ -17,7 +17,10 @@ namespace ModernWpf.Demo.Views
         private void DeleteConfirmation_Click(object sender, RoutedEventArgs e)
         {
             var f = FlyoutService.GetFlyout(Control1) as Flyout;
-            if (f != null) f.Hide();
+            if (f != null)
+            {
+                f.Hide();
+            }
         }
     }
 }

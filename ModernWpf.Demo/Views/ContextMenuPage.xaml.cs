@@ -3,11 +3,11 @@
 namespace ModernWpf.Demo.Views
 {
     /// <summary>
-    ///     Interaction logic for Button
+    /// Interaction logic for ContextMenuPage.xaml
     /// </summary>
-    public partial class ButtonDemo : UserControl
+    public partial class ContextMenuPage : UserControl
     {
-        public ButtonDemo()
+        public ContextMenuPage()
         {
             InitializeComponent();
         }

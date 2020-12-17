@@ -30,6 +30,7 @@ namespace ModernWpf.Demo.Models
             const int numberOfLocations = 8;
             var objects = new List<CustomDataObject>();
             for (var i = 0; i < numberOfLocations; i++)
+            {
                 objects.Add(new CustomDataObject
                 {
                     Title = $"Item {i + 1}",
@@ -38,6 +39,7 @@ namespace ModernWpf.Demo.Models
                     Likes = rand.Next(10, 99).ToString(),
                     Description = dummyTexts[i % dummyTexts.Length]
                 });
+            }
 
             return objects;
         }

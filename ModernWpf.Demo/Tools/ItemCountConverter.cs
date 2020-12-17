@@ -4,11 +4,23 @@ using System.Windows.Data;
 
 namespace ModernWpf.Demo.Tools
 {
-    public class EnumValuesConverter : IValueConverter
+    public class ItemCountConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return Enum.GetValues((Type)value);
+            if (value is int count)
+            {
+                if (count > 1)
+                {
+                    return $"({count} items)";
+                }
+                else if (count == 1)
+                {
+                    return $"({count} item)";
+                }
+            }
+
+            return string.Empty;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

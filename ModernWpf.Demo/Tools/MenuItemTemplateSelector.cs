@@ -1,7 +1,7 @@
-﻿using System.Windows;
+﻿using ModernWpf.Demo.Models;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
-using ModernWpf.Demo.Models;
 using Separator = ModernWpf.Demo.Models.Separator;
 
 namespace ModernWpf.Demo.Tools
@@ -9,12 +9,12 @@ namespace ModernWpf.Demo.Tools
     [ContentProperty("ItemTemplate")]
     internal class MenuItemTemplateSelector : DataTemplateSelector
     {
-        internal DataTemplate HeaderTemplate = (DataTemplate) XamlReader.Parse(
+        internal DataTemplate HeaderTemplate = (DataTemplate)XamlReader.Parse(
             @"<DataTemplate xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation'>
                    <NavigationViewItemHeader Content='{Binding Name}' />
                   </DataTemplate>");
 
-        internal DataTemplate SeparatorTemplate = (DataTemplate) XamlReader.Parse(
+        internal DataTemplate SeparatorTemplate = (DataTemplate)XamlReader.Parse(
             @"<DataTemplate xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation'>
                     <NavigationViewItemSeparator />
                   </DataTemplate>");

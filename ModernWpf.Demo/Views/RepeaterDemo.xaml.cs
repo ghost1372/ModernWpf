@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModernWpf.Controls;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
@@ -7,7 +8,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
-using ModernWpf.Controls;
 using static ModernWpf.Demo.Views.ListViewDemo;
 
 namespace ModernWpf.Demo.Views
@@ -30,9 +30,9 @@ namespace ModernWpf.Demo.Views
         public RepeaterDemo()
         {
             InitializeComponent();
-            VerticalStackLayout = (StackLayout) Resources[nameof(VerticalStackLayout)];
-            HorizontalStackLayout = (StackLayout) Resources[nameof(HorizontalStackLayout)];
-            UniformGridLayout = (UniformGridLayout) Resources[nameof(UniformGridLayout)];
+            VerticalStackLayout = (StackLayout)Resources[nameof(VerticalStackLayout)];
+            HorizontalStackLayout = (StackLayout)Resources[nameof(HorizontalStackLayout)];
+            UniformGridLayout = (UniformGridLayout)Resources[nameof(UniformGridLayout)];
 
             InitializeData();
             repeater2.ItemsSource = Enumerable.Range(0, 500);
@@ -45,7 +45,10 @@ namespace ModernWpf.Demo.Views
 
         private void InitializeData()
         {
-            if (BarItems == null) BarItems = new ObservableCollection<Bar>();
+            if (BarItems == null)
+            {
+                BarItems = new ObservableCollection<Bar>();
+            }
 
             BarItems.Add(new Bar(300, MaxLength));
             BarItems.Add(new Bar(25, MaxLength));
@@ -130,7 +133,10 @@ namespace ModernWpf.Demo.Views
             if (BarItems.Count > 0)
             {
                 BarItems.RemoveAt(0);
-                if (BarItems.Count == 0) DeleteBtn.IsEnabled = false;
+                if (BarItems.Count == 0)
+                {
+                    DeleteBtn.IsEnabled = false;
+                }
             }
         }
 
@@ -158,7 +164,7 @@ namespace ModernWpf.Demo.Views
 
         private void LayoutBtn_Click(object sender, RoutedEventArgs e)
         {
-            var layoutKey = ((FrameworkElement) sender).Tag as string;
+            var layoutKey = ((FrameworkElement)sender).Tag as string;
 
             repeater2.Layout = Resources[layoutKey] as VirtualizingLayout;
         }
@@ -166,7 +172,7 @@ namespace ModernWpf.Demo.Views
         private void RadioBtn_Click(object sender, RoutedEventArgs e)
         {
             var itemTemplateKey = string.Empty;
-            var layoutKey = ((FrameworkElement) sender).Tag as string;
+            var layoutKey = ((FrameworkElement)sender).Tag as string;
 
             if (layoutKey.Equals(nameof(VerticalStackLayout))
             ) // we used x:Name in the resources which both acts as the x:Key value and creates a member field by the same name
@@ -200,18 +206,22 @@ namespace ModernWpf.Demo.Views
 
         private void ChangeFirstItemButton_Click(object sender, RoutedEventArgs e)
         {
-            var contacts = (ObservableCollection<Contact>) DataContext;
+            var contacts = (ObservableCollection<Contact>)DataContext;
             contacts[0] = new Contact("First", "Last", "Line 1\nLine 2");
         }
 
         private void ModifyFirstItemButton_Click(object sender, RoutedEventArgs e)
         {
-            var contacts = (ObservableCollection<Contact>) DataContext;
+            var contacts = (ObservableCollection<Contact>)DataContext;
             var firstContact = contacts[0];
             if (firstContact.Company.Contains("\n"))
+            {
                 firstContact.ChangeCompany("Line 1");
+            }
             else
+            {
                 firstContact.ChangeCompany("Line 1\nLine 2");
+            }
         }
     }
 
@@ -235,8 +245,11 @@ namespace ModernWpf.Demo.Views
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            if ((int) item % 2 == 0)
+            if ((int)item % 2 == 0)
+            {
                 return Normal;
+            }
+
             return Accent;
         }
     }
@@ -253,9 +266,15 @@ namespace ModernWpf.Demo.Views
         {
             // Return the correct data template based on the item's type.
             if (item.GetType() == typeof(string))
+            {
                 return StringTemplate;
+            }
+
             if (item.GetType() == typeof(int))
+            {
                 return IntTemplate;
+            }
+
             return null;
         }
     }
@@ -293,7 +312,10 @@ namespace ModernWpf.Demo.Views
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is double d && double.IsNaN(d)) return 0d;
+            if (value is double d && double.IsNaN(d))
+            {
+                return 0d;
+            }
 
             return value;
         }
@@ -303,7 +325,10 @@ namespace ModernWpf.Demo.Views
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is Color color) return new SolidColorBrush(color);
+            if (value is Color color)
+            {
+                return new SolidColorBrush(color);
+            }
 
             return null;
         }

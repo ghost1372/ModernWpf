@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\AppIcon.ico" />
     <None Remove="Assets\Contacts.txt" />
+    <None Remove="Assets\file.png" />
+    <None Remove="Assets\folder.png" />
+    <None Remove="Assets\mtns.csv" />
     <None Remove="Assets\SampleMedia\cliff.jpg" />
     <None Remove="Assets\SampleMedia\LandscapeImage1.jpg" />
     <None Remove="Assets\SampleMedia\LandscapeImage2.jpg" />
@@ -18,6 +22,7 @@
     <None Remove="Assets\SampleMedia\LandscapeImage7.jpg" />
     <None Remove="Assets\SampleMedia\LandscapeImage8.jpg" />
     <None Remove="Assets\SampleMedia\rainier.jpg" />
+    <None Remove="Assets\Slices2.png" />
     <None Remove="Assets\TabViewIcons\cmd.png" />
     <None Remove="Assets\TabViewIcons\linux.png" />
     <None Remove="Assets\TabViewIcons\powershell.png" />
@@ -32,7 +37,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\AppIcon.ico" />
     <Resource Include="Assets\Contacts.txt" />
+    <Resource Include="Assets\file.png" />
+    <Resource Include="Assets\folder.png" />
+    <Resource Include="Assets\mtns.csv" />
     <Resource Include="Assets\SampleMedia\cliff.jpg" />
     <Resource Include="Assets\SampleMedia\LandscapeImage1.jpg" />
     <Resource Include="Assets\SampleMedia\LandscapeImage2.jpg" />
@@ -43,6 +52,7 @@
     <Resource Include="Assets\SampleMedia\LandscapeImage7.jpg" />
     <Resource Include="Assets\SampleMedia\LandscapeImage8.jpg" />
     <Resource Include="Assets\SampleMedia\rainier.jpg" />
+    <Resource Include="Assets\Slices2.png" />
     <Resource Include="Assets\TabViewIcons\cmd.png" />
     <Resource Include="Assets\TabViewIcons\linux.png" />
     <Resource Include="Assets\TabViewIcons\powershell.png" />

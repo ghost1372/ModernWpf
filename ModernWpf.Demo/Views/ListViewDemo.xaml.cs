@@ -54,13 +54,18 @@ namespace ModernWpf.Demo.Views
                 var resourceStream = Application.GetResourceStream(new Uri("/Assets/Contacts.txt", UriKind.Relative));
                 using (var reader = new StreamReader(resourceStream.Stream))
                 {
-                    while (!reader.EndOfStream) lines.Add(reader.ReadLine());
+                    while (!reader.EndOfStream)
+                    {
+                        lines.Add(reader.ReadLine());
+                    }
                 }
 
                 var contacts = new ObservableCollection<Contact>();
 
                 for (var i = 0; i < lines.Count; i += 3)
+                {
                     contacts.Add(new Contact(lines[i], lines[i + 1], lines[i + 2]));
+                }
 
                 return Task.FromResult(contacts);
             }
@@ -68,10 +73,10 @@ namespace ModernWpf.Demo.Views
             public static async Task<ObservableCollection<GroupInfoList>> GetContactsGroupedAsync()
             {
                 var query = from item in await GetContactsAsync()
-                    group item by item.LastName.Substring(0, 1).ToUpper()
+                            group item by item.LastName.Substring(0, 1).ToUpper()
                     into g
-                    orderby g.Key
-                    select new GroupInfoList(g) {Key = g.Key};
+                            orderby g.Key
+                            select new GroupInfoList(g) { Key = g.Key };
 
                 return new ObservableCollection<GroupInfoList>(query);
             }

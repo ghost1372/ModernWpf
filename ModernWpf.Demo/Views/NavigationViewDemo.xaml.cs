@@ -1,11 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using ModernWpf.Controls;
+using ModernWpf.Demo.Models;
+using ModernWpf.Demo.SamplePages;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Automation;
 using System.Windows.Controls;
-using ModernWpf.Controls;
-using ModernWpf.Demo.Models;
-using ModernWpf.Demo.SamplePages;
 using Separator = ModernWpf.Demo.Models.Separator;
 using VirtualKey = System.Windows.Input.Key;
 
@@ -35,11 +35,11 @@ namespace ModernWpf.Demo.Views
 
             Categories = new ObservableCollection<CategoryBase>();
             var firstCategory = new Category
-                {Name = "Category 1", Glyph = Symbol.Home, Tooltip = "This is category 1"};
+            { Name = "Category 1", Glyph = Symbol.Home, Tooltip = "This is category 1" };
             Categories.Add(firstCategory);
-            Categories.Add(new Category {Name = "Category 2", Glyph = Symbol.Keyboard, Tooltip = "This is category 2"});
-            Categories.Add(new Category {Name = "Category 3", Glyph = Symbol.Library, Tooltip = "This is category 3"});
-            Categories.Add(new Category {Name = "Category 4", Glyph = Symbol.Mail, Tooltip = "This is category 4"});
+            Categories.Add(new Category { Name = "Category 2", Glyph = Symbol.Keyboard, Tooltip = "This is category 2" });
+            Categories.Add(new Category { Name = "Category 3", Glyph = Symbol.Library, Tooltip = "This is category 3" });
+            Categories.Add(new Category { Name = "Category 4", Glyph = Symbol.Mail, Tooltip = "This is category 4" });
             Loaded += delegate { nvSample4.SelectedItem ??= firstCategory; };
 
             //setASBSubstitutionString();
@@ -53,7 +53,10 @@ namespace ModernWpf.Demo.Views
         public NavigationViewPaneDisplayMode ChoosePanePosition(bool toggleOn)
         {
             if (toggleOn)
+            {
                 return NavigationViewPaneDisplayMode.Left;
+            }
+
             return NavigationViewPaneDisplayMode.Top;
         }
 
@@ -66,24 +69,34 @@ namespace ModernWpf.Demo.Views
             }
             else
             {
-                var selectedItem = (NavigationViewItem) args.SelectedItem;
+                var selectedItem = (NavigationViewItem)args.SelectedItem;
                 if (selectedItem != null)
                 {
-                    var selectedItemTag = (string) selectedItem.Tag;
+                    var selectedItemTag = (string)selectedItem.Tag;
                     var header =
                         (sender.Header = "Sample Page " + selectedItemTag.Substring(selectedItemTag.Length - 1))
                         .ToString();
 
                     if (header.Contains("1"))
+                    {
                         contentFrame.Navigate(typeof(SamplePage1));
+                    }
                     else if (header.Contains("2"))
+                    {
                         contentFrame.Navigate(typeof(SamplePage2));
+                    }
                     else if (header.Contains("3"))
+                    {
                         contentFrame.Navigate(typeof(SamplePage3));
+                    }
                     else if (header.Contains("4"))
+                    {
                         contentFrame.Navigate(typeof(SamplePage4));
+                    }
                     else
+                    {
                         contentFrame.Navigate(typeof(SampleSettingsPage));
+                    }
                 }
             }
         }
@@ -99,22 +112,32 @@ namespace ModernWpf.Demo.Views
                 }
                 else
                 {
-                    var selectedItem = (NavigationViewItem) args.SelectedItem;
-                    var selectedItemTag = (string) selectedItem.Tag;
+                    var selectedItem = (NavigationViewItem)args.SelectedItem;
+                    var selectedItemTag = (string)selectedItem.Tag;
                     var header =
                         (sender.Header = "Sample Page " + selectedItemTag.Substring(selectedItemTag.Length - 1))
                         .ToString();
 
                     if (header.Contains("1"))
+                    {
                         contentFrame2.Navigate(typeof(SamplePage1));
+                    }
                     else if (header.Contains("2"))
+                    {
                         contentFrame2.Navigate(typeof(SamplePage2));
+                    }
                     else if (header.Contains("3"))
+                    {
                         contentFrame2.Navigate(typeof(SamplePage3));
+                    }
                     else if (header.Contains("4"))
+                    {
                         contentFrame2.Navigate(typeof(SamplePage4));
+                    }
                     else
+                    {
                         contentFrame2.Navigate(typeof(SampleSettingsPage));
+                    }
                 }
             }
 
@@ -130,21 +153,31 @@ namespace ModernWpf.Demo.Views
             }
             else
             {
-                var selectedItem = (Category) args.SelectedItem;
+                var selectedItem = (Category)args.SelectedItem;
                 var selectedItemTag = selectedItem.Name;
                 var header = (sender.Header = "Sample Page " + selectedItemTag.Substring(selectedItemTag.Length - 1))
                     .ToString();
 
                 if (header.Contains("1"))
+                {
                     contentFrame4.Navigate(typeof(SamplePage1));
+                }
                 else if (header.Contains("2"))
+                {
                     contentFrame4.Navigate(typeof(SamplePage2));
+                }
                 else if (header.Contains("3"))
+                {
                     contentFrame4.Navigate(typeof(SamplePage3));
+                }
                 else if (header.Contains("4"))
+                {
                     contentFrame4.Navigate(typeof(SamplePage4));
+                }
                 else
+                {
                     contentFrame4.Navigate(typeof(SampleSettingsPage));
+                }
             }
         }
 
@@ -158,21 +191,31 @@ namespace ModernWpf.Demo.Views
             }
             else
             {
-                var selectedItem = (NavigationViewItem) args.SelectedItem;
-                var selectedItemTag = (string) selectedItem.Tag;
+                var selectedItem = (NavigationViewItem)args.SelectedItem;
+                var selectedItemTag = (string)selectedItem.Tag;
                 var header = (sender.Header = "Sample Page " + selectedItemTag.Substring(selectedItemTag.Length - 1))
                     .ToString();
 
                 if (header.Contains("1"))
+                {
                     contentFrame5.Navigate(typeof(SamplePage1));
+                }
                 else if (header.Contains("2"))
+                {
                     contentFrame5.Navigate(typeof(SamplePage2));
+                }
                 else if (header.Contains("3"))
+                {
                     contentFrame5.Navigate(typeof(SamplePage3));
+                }
                 else if (header.Contains("4"))
+                {
                     contentFrame5.Navigate(typeof(SamplePage4));
+                }
                 else
+                {
                     contentFrame5.Navigate(typeof(SampleSettingsPage));
+                }
             }
         }
 
@@ -185,19 +228,29 @@ namespace ModernWpf.Demo.Views
             }
             else
             {
-                var selectedItem = (NavigationViewItem) args.SelectedItem;
-                var header = (sender.Header = "Sample Page " + (string) selectedItem.Tag).ToString();
+                var selectedItem = (NavigationViewItem)args.SelectedItem;
+                var header = (sender.Header = "Sample Page " + (string)selectedItem.Tag).ToString();
 
                 if (header.Contains("1"))
+                {
                     contentFrame6.Navigate(typeof(SamplePage1));
+                }
                 else if (header.Contains("2"))
+                {
                     contentFrame6.Navigate(typeof(SamplePage2));
+                }
                 else if (header.Contains("3"))
+                {
                     contentFrame6.Navigate(typeof(SamplePage3));
+                }
                 else if (header.Contains("4"))
+                {
                     contentFrame6.Navigate(typeof(SamplePage4));
+                }
                 else
+                {
                     contentFrame6.Navigate(typeof(SampleSettingsPage));
+                }
             }
         }
 
@@ -210,19 +263,29 @@ namespace ModernWpf.Demo.Views
             }
             else
             {
-                var selectedItem = (NavigationViewItem) args.SelectedItem;
-                var header = (sender.Header = "Sample Page " + (string) selectedItem.Tag).ToString();
+                var selectedItem = (NavigationViewItem)args.SelectedItem;
+                var header = (sender.Header = "Sample Page " + (string)selectedItem.Tag).ToString();
 
                 if (header.Contains("1"))
+                {
                     contentFrame7.Navigate(typeof(SamplePage1), null, args.RecommendedNavigationTransitionInfo);
+                }
                 else if (header.Contains("2"))
+                {
                     contentFrame7.Navigate(typeof(SamplePage2), null, args.RecommendedNavigationTransitionInfo);
+                }
                 else if (header.Contains("3"))
+                {
                     contentFrame7.Navigate(typeof(SamplePage3), null, args.RecommendedNavigationTransitionInfo);
+                }
                 else if (header.Contains("4"))
+                {
                     contentFrame7.Navigate(typeof(SamplePage4), null, args.RecommendedNavigationTransitionInfo);
+                }
                 else
+                {
                     contentFrame7.Navigate(typeof(SampleSettingsPage), null, args.RecommendedNavigationTransitionInfo);
+                }
             }
         }
 
@@ -241,21 +304,31 @@ namespace ModernWpf.Demo.Views
             }
             else
             {
-                var selectedItem = (NavigationViewItem) args.SelectedItem;
-                var selectedItemTag = (string) selectedItem.Tag;
+                var selectedItem = (NavigationViewItem)args.SelectedItem;
+                var selectedItemTag = (string)selectedItem.Tag;
                 var header = (sender.Header = "Sample Page " + selectedItemTag.Substring(selectedItemTag.Length - 1))
                     .ToString();
 
                 if (header.Contains("1"))
+                {
                     contentFrame8.Navigate(typeof(SamplePage1));
+                }
                 else if (header.Contains("2"))
+                {
                     contentFrame8.Navigate(typeof(SamplePage2));
+                }
                 else if (header.Contains("3"))
+                {
                     contentFrame8.Navigate(typeof(SamplePage3));
+                }
                 else if (header.Contains("4"))
+                {
                     contentFrame8.Navigate(typeof(SamplePage4));
+                }
                 else
+                {
                     contentFrame8.Navigate(typeof(SampleSettingsPage));
+                }
             }
         }
 
@@ -305,9 +378,13 @@ namespace ModernWpf.Demo.Views
         private void visibleCheck_Click(object sender, RoutedEventArgs e)
         {
             if ((sender as CheckBox).IsChecked == true)
+            {
                 nvSample.IsBackButtonVisible = NavigationViewBackButtonVisible.Visible;
+            }
             else
+            {
                 nvSample.IsBackButtonVisible = NavigationViewBackButtonVisible.Collapsed;
+            }
         }
 
         private void enableCheck_Click(object sender, RoutedEventArgs e)
@@ -319,7 +396,7 @@ namespace ModernWpf.Demo.Views
         {
             if ((sender as CheckBox).IsChecked == true)
             {
-                var asb = new AutoSuggestBox {QueryIcon = new SymbolIcon(Symbol.Find)};
+                var asb = new AutoSuggestBox { QueryIcon = new SymbolIcon(Symbol.Find) };
                 asb.SetValue(AutomationProperties.NameProperty, "search");
                 nvSample.AutoSuggestBox = asb;
 
@@ -342,17 +419,25 @@ namespace ModernWpf.Demo.Views
         private void panemc_Check_Click(object sender, RoutedEventArgs e)
         {
             if ((sender as CheckBox).IsChecked == true)
+            {
                 PaneHyperlink.Visibility = Visibility.Visible;
+            }
             else
+            {
                 PaneHyperlink.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void paneFooterCheck_Click(object sender, RoutedEventArgs e)
         {
             if ((sender as CheckBox).IsChecked == true)
+            {
                 FooterStackPanel.Visibility = Visibility.Visible;
+            }
             else
+            {
                 FooterStackPanel.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void panePositionLeft_Checked(object sender, RoutedEventArgs e)
@@ -395,19 +480,25 @@ namespace ModernWpf.Demo.Views
         private void panePositionLeftCompact_Checked(object sender, RoutedEventArgs e)
         {
             if ((sender as RadioButton).IsChecked == true)
+            {
                 if ((sender as RadioButton).Name == "nvSample8LeftCompact" && nvSample8 != null)
                 {
                     nvSample8.PaneDisplayMode = NavigationViewPaneDisplayMode.LeftCompact;
                     nvSample8.IsPaneOpen = false;
                 }
+            }
         }
 
         private void sffCheck_Click(object sender, RoutedEventArgs e)
         {
             if ((sender as CheckBox).IsChecked == true)
+            {
                 nvSample.SelectionFollowsFocus = NavigationViewSelectionFollowsFocus.Enabled;
+            }
             else
+            {
                 nvSample.SelectionFollowsFocus = NavigationViewSelectionFollowsFocus.Disabled;
+            }
         }
 
         private void suppressselectionCheck_Checked_Click(object sender, RoutedEventArgs e)

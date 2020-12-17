@@ -1,8 +1,8 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using ModernWpf.Controls;
+﻿using ModernWpf.Controls;
 using ModernWpf.Controls.Primitives;
 using ModernWpf.Demo.SamplePages;
+using System.Windows;
+using System.Windows.Controls;
 using Frame = ModernWpf.Controls.Frame;
 
 namespace ModernWpf.Demo.Views
@@ -25,7 +25,10 @@ namespace ModernWpf.Demo.Views
 
         private void TabView_Loaded(object sender, RoutedEventArgs e)
         {
-            for (var i = 0; i < 3; i++) (sender as TabControl).Items.Add(CreateNewTab(i));
+            for (var i = 0; i < 3; i++)
+            {
+                (sender as TabControl).Items.Add(CreateNewTab(i));
+            }
         }
 
         private TabItem CreateNewTab(int index)
@@ -38,7 +41,7 @@ namespace ModernWpf.Demo.Views
             // The content of the tab is often a frame that contains a page, though it could be any UIElement.
             var frame = new Frame();
 
-            frame.Navigated += (s, e) => { ((FrameworkElement) frame.Content).Margin = new Thickness(-18, 0, -18, 0); };
+            frame.Navigated += (s, e) => { ((FrameworkElement)frame.Content).Margin = new Thickness(-18, 0, -18, 0); };
 
             switch (index % 3)
             {

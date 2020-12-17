@@ -14,7 +14,22 @@ namespace ModernWpf.Demo
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ButtonDemo>();
+            containerRegistry.RegisterForNavigation<AppBarButtonPage>();
+            containerRegistry.RegisterForNavigation<AppBarSeparatorPage>();
+            containerRegistry.RegisterForNavigation<AppBarToggleButtonPage>();
+            containerRegistry.RegisterForNavigation<AutoSuggestBoxPage>();
+            containerRegistry.RegisterForNavigation<ButtonsPage>();
+            containerRegistry.RegisterForNavigation<CalendarPage>();
+            containerRegistry.RegisterForNavigation<CheckBoxPage>();
+            containerRegistry.RegisterForNavigation<ComboBoxPage>();
+            containerRegistry.RegisterForNavigation<CommandBarFlyoutPage>();
+            containerRegistry.RegisterForNavigation<CommandBarPage>();
+            containerRegistry.RegisterForNavigation<CompactSizingPage>();
+            containerRegistry.RegisterForNavigation<ContentDialogPage>();
+            containerRegistry.RegisterForNavigation<ContextMenuPage>();
+            containerRegistry.RegisterForNavigation<ControlPalettePage>();
+            containerRegistry.RegisterForNavigation<DataGridPage>();
+            containerRegistry.RegisterForNavigation<DatePickerPage>();
             containerRegistry.RegisterForNavigation<NavigationViewDemo>();
             containerRegistry.RegisterForNavigation<ProgressBarDemo>();
             containerRegistry.RegisterForNavigation<InputsDemo>();
