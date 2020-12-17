@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="ModernWpf.Demo.Views.StatusBarPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModernWpf.Demo.Views"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ui:SimpleStackPanel Style="{StaticResource ControlPageContentPanelStyle}">
+        <ui:ControlExample HeaderText="A StatusBar.">
+            <StatusBar
+                x:Name="statusBar"
+                VerticalAlignment="Bottom">
+                <StatusBarItem>
+                    <TextBlock>Downloading File</TextBlock>
+                </StatusBarItem>
+
+                <StatusBarItem>
+                    <ProgressBar
+                        Width="100"
+                        Height="20"
+                        x:Name="progressBar1">
+                        <ProgressBar.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetProperty="Value"
+                                            From="0"
+                                            To="100"
+                                            Duration="0:0:5" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ProgressBar.Triggers>
+                    </ProgressBar>
+                </StatusBarItem>
+
+                <Separator />
+
+                <StatusBarItem>
+                    <TextBlock>Online</TextBlock>
+                </StatusBarItem>
+
+                <StatusBarItem HorizontalAlignment="Right">
+                    <ui:FontIcon
+                        FontSize="12"
+                        Glyph="&#xE897;" />
+                </StatusBarItem>
+            </StatusBar>
+
+            <ui:ControlExample.Options>
+                <CheckBox
+                    Content="IsEnabled"
+                    IsChecked="{Binding ElementName=statusBar, Path=IsEnabled}" />
+            </ui:ControlExample.Options>
+        </ui:ControlExample>
+    </ui:SimpleStackPanel>
+</UserControl>

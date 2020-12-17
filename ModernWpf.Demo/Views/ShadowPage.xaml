@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="ModernWpf.Demo.Views.ShadowPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModernWpf.Demo.Views"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ui:SimpleStackPanel Margin="{StaticResource ControlPageContentMargin}">
+        <ui:ControlExample
+            HeaderText="ThemeShadowChrome"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch">
+            <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+                    Padding="96"
+                    ui:ThemeManager.RequestedTheme="Light">
+                <ui:ThemeShadowChrome
+                    IsShadowEnabled="True"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Depth="{Binding ElementName=DepthSlider, Path=Value}">
+                    <Rectangle
+                        Width="200"
+                        Height="200"
+                        Fill="{DynamicResource SystemControlBackgroundAltHighBrush}" />
+                </ui:ThemeShadowChrome>
+            </Border>
+
+            <ui:ControlExample.Options>
+                <ui:SimpleStackPanel Style="{StaticResource OptionsPanelStyle}">
+                    <Slider
+                        x:Name="DepthSlider"
+                        ui:ControlHelper.Header="Depth"
+                        Ticks="1,2,3,4,6,8,9,12,16,24,32,40,48,64,80,96"
+                        IsSnapToTickEnabled="True"
+                        Minimum="1"
+                        Maximum="96"
+                        Value="32"
+                        AutoToolTipPlacement="TopLeft" />
+                </ui:SimpleStackPanel>
+            </ui:ControlExample.Options>
+        </ui:ControlExample>
+    </ui:SimpleStackPanel>
+</UserControl>

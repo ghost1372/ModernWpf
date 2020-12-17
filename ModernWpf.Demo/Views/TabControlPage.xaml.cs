@@ -10,9 +10,9 @@ namespace ModernWpf.Demo.Views
     /// <summary>
     ///     Interaction logic for TabControlDemo.xaml
     /// </summary>
-    public partial class TabControlDemo : UserControl
+    public partial class TabControlPage : UserControl
     {
-        public TabControlDemo()
+        public TabControlPage()
         {
             InitializeComponent();
             for (var i = 0; i < 3; i++)

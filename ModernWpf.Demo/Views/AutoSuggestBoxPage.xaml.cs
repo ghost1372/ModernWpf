@@ -1,12 +1,12 @@
-﻿using System;
-using ModernWpf.Controls;
+﻿using ModernWpf.Controls;
+using ModernWpf.Demo.Tools;
+using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using ModernWpf.Demo.Tools;
-using Prism.Regions;
 
 namespace ModernWpf.Demo.Views
 {
@@ -17,7 +17,7 @@ namespace ModernWpf.Demo.Views
     {
         private readonly ControlPagesData _controlPages = new ControlPagesData();
 
-        private IRegionManager region;
+        private readonly IRegionManager region;
         public AutoSuggestBoxPage(IRegionManager regionManager)
         {
             InitializeComponent();
@@ -65,9 +65,13 @@ namespace ModernWpf.Demo.Views
                 var suggestions = SearchControls(sender.Text);
 
                 if (suggestions.Count > 0)
+                {
                     sender.ItemsSource = suggestions;
+                }
                 else
+                {
                     sender.ItemsSource = new string[] { "No results found" };
+                }
             }
         }
 

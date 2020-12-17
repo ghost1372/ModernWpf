@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModernWpf.Demo.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -6,25 +7,21 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Navigation;
-using ModernWpf.Demo.Models;
-using ModernWpf.Demo.Tools;
 
 namespace ModernWpf.Demo.Views
 {
     public sealed partial class ListView2Page : UserControl
     {
         ObservableCollection<ListViewPage.Contact> contacts1 = new ObservableCollection<ListViewPage.Contact>();
-        ObservableCollection<ListViewPage.Contact> contacts2 = new ObservableCollection<ListViewPage.Contact>();
+        readonly ObservableCollection<ListViewPage.Contact> contacts2 = new ObservableCollection<ListViewPage.Contact>();
         ObservableCollection<ListViewPage.Contact> contacts3 = new ObservableCollection<ListViewPage.Contact>();
         ObservableCollection<ListViewPage.Contact> contacts3Filtered = new ObservableCollection<ListViewPage.Contact>();
-
-        CollectionViewSource ContactsCVS;
+        readonly CollectionViewSource ContactsCVS;
 
         public ListView2Page()
         {
             InitializeComponent();
-            Loaded+=OnLoaded;
+            Loaded += OnLoaded;
             ContactsCVS = (CollectionViewSource)Resources[nameof(ContactsCVS)];
         }
 

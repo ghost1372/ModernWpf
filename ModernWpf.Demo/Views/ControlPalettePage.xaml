@@ -5,63 +5,47 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ModernWpf.Demo.Views"
              xmlns:ui="http://schemas.modernwpf.com/2019"
-             mc:Ignorable="d" 
-              Background="{DynamicResource AppBackgroundBrush}">
+             Background="{DynamicResource AppBackgroundBrush}"
+             mc:Ignorable="d">
 
-    <Grid
-        Margin="12"
-        Background="{DynamicResource AppContentBackgroundBrush}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+    <Border Background="Transparent">
+        <Grid
+            Margin="12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ScrollViewer
+                x:Name="ContentScrollViewer"
+                Grid.ColumnSpan="2">
+                <Grid VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
 
-        <ui:ThemeShadowChrome
-            x:Name="Shadow"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            Depth="8"
-            IsShadowEnabled="{DynamicResource {x:Static SystemParameters.DropShadowKey}}" />
+                    <Border
+                        Grid.Column="0"
+                        VerticalAlignment="Top"
+                        Background="{DynamicResource SystemControlBackgroundAltHighRevealBackgroundBrush}"
+                        ui:ThemeManager.RequestedTheme="Light">
+                        <local:ControlPaletteTestContent
+                            Title="Light theme"
+                            VerticalAlignment="Top" />
+                    </Border>
 
-        <Border
-            Grid.Column="0"
-            Background="{DynamicResource RegionBrush}"
-            CornerRadius="2 0 0 2"
-            ui:ThemeManager.RequestedTheme="Light" />
-        <Border
-            Grid.Column="1"
-            Background="{DynamicResource RegionBrush}"
-            CornerRadius="0 2 2 0"
-            ui:ThemeManager.RequestedTheme="Dark" />
+                    <Border
+                        Grid.Column="1"
+                        VerticalAlignment="Top"
+                        Background="{DynamicResource SystemControlBackgroundAltHighRevealBackgroundBrush}"
+                        ui:ThemeManager.RequestedTheme="Dark">
+                        <local:ControlPaletteTestContent
+                            Title="Dark theme"
+                            VerticalAlignment="Top" />
+                    </Border>
+                </Grid>
+            </ScrollViewer>
 
-        <ScrollViewer
-            x:Name="ContentScrollViewer"
-            Grid.ColumnSpan="2"
-            ui:ThemeManager.RequestedTheme="Dark">
-            <Grid VerticalAlignment="Top">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Border
-                    Grid.Column="0"
-                    VerticalAlignment="Top"
-                    ui:ThemeManager.RequestedTheme="Light">
-                    <local:ControlPaletteTestContent
-                        Title="Light theme"
-                        VerticalAlignment="Top" />
-                </Border>
-
-                <Border
-                    Grid.Column="1"
-                    VerticalAlignment="Top"
-                    ui:ThemeManager.RequestedTheme="Dark">
-                    <local:ControlPaletteTestContent
-                        Title="Dark theme"
-                        VerticalAlignment="Top" />
-                </Border>
-            </Grid>
-        </ScrollViewer>
-    </Grid>
+        </Grid>
+    </Border>
 </UserControl>

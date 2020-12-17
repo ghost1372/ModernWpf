@@ -7,11 +7,131 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:hc="http://schemas.microsoft.com/xaml/behaviors"
-        mc:Ignorable="d"
+        xmlns:sc="clr-namespace:ModernWpf.Demo.Tools"
+        ui:ThemeManager.IsThemeAware="True"
+        Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
+        Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
         Title="MainWindow" Height="600" Width="1200">
+    <Window.Resources>
+        <sc:EqualsConverter
+            x:Key="IsDefaultConverter"
+            Value="{x:Null}" />
+        <sc:EqualsConverter
+            x:Key="IsLightConverter"
+            Value="{x:Static ui:ApplicationTheme.Light}" />
+        <sc:EqualsConverter
+            x:Key="IsDarkConverter"
+            Value="{x:Static ui:ApplicationTheme.Dark}" />
+    </Window.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-    <ui:NavigationView IsBackButtonVisible="Collapsed" IsTabStop="False" PaneTitle="ModernWpf Demo"
+            <Menu>
+                <MenuItem Header="Theme">
+                    <ui:RadioMenuItem
+                        Header="Default"
+                        IsChecked="{Binding ApplicationTheme, Source={x:Static sc:ThemeManagerProxy.Current}, Mode=OneWay, Converter={StaticResource IsDefaultConverter}}"
+                        Checked="Default_Checked" />
+                    <ui:RadioMenuItem
+                        Header="Light"
+                        IsChecked="{Binding ApplicationTheme, Source={x:Static sc:ThemeManagerProxy.Current}, Mode=OneWay, Converter={StaticResource IsLightConverter}}"
+                        Checked="Light_Checked" />
+                    <ui:RadioMenuItem
+                        Header="Dark"
+                        IsChecked="{Binding ApplicationTheme, Source={x:Static sc:ThemeManagerProxy.Current}, Mode=OneWay, Converter={StaticResource IsDarkConverter}}"
+                        Checked="Dark_Checked" />
+                </MenuItem>
+                <MenuItem
+                    Header="Sizing"
+                    MenuItem.Click="SizingMenuItem_Click">
+                    <ui:RadioMenuItem
+                        Header="Standard"
+                        IsChecked="True" />
+                    <ui:RadioMenuItem
+                        Header="Compact"
+                        Tag="Compact" />
+                </MenuItem>
+                <MenuItem Header="Shadows">
+                    <ui:RadioMenuItem
+                        x:Name="ShadowsAuto"
+                        Header="Use system setting"
+                        IsChecked="True"
+                        Checked="ShadowsAuto_Checked" />
+                    <ui:RadioMenuItem
+                        x:Name="ShadowsEnabled"
+                        Header="Enabled"
+                        Checked="ShadowsEnabled_Checked" />
+                    <ui:RadioMenuItem
+                        x:Name="ShadowsDisabled"
+                        Header="Disabled"
+                        Checked="ShadowsDisabled_Checked" />
+                </MenuItem>
+                <MenuItem Header="Settings">
+                    <MenuItem Header="Automatically hide scroll bars">
+                        <ui:RadioMenuItem
+                            x:Name="AutoHideScrollBarsAuto"
+                            Header="Use system setting"
+                            IsChecked="True"
+                            Checked="AutoHideScrollBarsAuto_Checked" />
+                        <ui:RadioMenuItem
+                            x:Name="AutoHideScrollBarsOn"
+                            Header="On"
+                            Checked="AutoHideScrollBarsOn_Checked" />
+                        <ui:RadioMenuItem
+                            x:Name="AutoHideScrollBarsOff"
+                            Header="Off"
+                            Checked="AutoHideScrollBarsOff_Checked" />
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem
+                    x:Name="DebugMenuItem"
+                    Header="Debug"
+                    Visibility="Collapsed">
+                    <MenuItem
+                        Header="Force GC"
+                        Click="ForceGC" />
+                    <MenuItem
+                        x:Name="NewWindowMenuItem"
+                        Header="New window"
+                        Visibility="Collapsed"
+                        Click="NewWindow" />
+                </MenuItem>
+            </Menu>
+
+            <ui:CommandBar
+                x:Name="TopCommandBar"
+                Grid.Column="1"
+                Margin="0,0,12,0"
+                Background="Transparent"
+                DefaultLabelPosition="Right">
+                <ui:AppBarButton x:Name="ThemeButton" Click="OnThemeButtonClick" Label="Toggle Theme">
+                    <ui:AppBarButton.Icon>
+                        <ui:FontIcon
+                            Glyph="&#xE771;"
+                            Margin="0,-2,0,0" />
+                    </ui:AppBarButton.Icon>
+                </ui:AppBarButton>
+            </ui:CommandBar>
+        </Grid>
+        <ui:NavigationView Grid.Row="1" IsBackButtonVisible="Collapsed" IsTabStop="False" PaneTitle="ModernWpf Demo"
                        IsSettingsVisible="True" PaneDisplayMode="Left">
+        <ui:NavigationView.AutoSuggestBox>
+            <ui:AutoSuggestBox
+                x:Name="Control2"
+                PlaceholderText="Type a control name"
+                TextChanged="Control2_TextChanged"
+                QueryIcon="Find"
+                QuerySubmitted="Control2_QuerySubmitted"
+                SuggestionChosen="Control2_SuggestionChosen"/>
+        </ui:NavigationView.AutoSuggestBox>
         <ui:NavigationView.MenuItems>
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="AppBarButtonPage" Content="AppBarButton" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="AppBarSeparatorPage" Content="AppBarSeparator" />
@@ -51,8 +171,23 @@
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ProgressPage" Content="ProgressBar" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ProgressRingPerfPage" Content="ProgressRing" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="RadioButtonsPage" Content="RadioButtons" />
-            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="SplitViewDemo" Content="SplitView" />
-            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="TabControlDemo" Content="TabControl" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="RatingControlPage" Content="RatingControl" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="RichTextBoxPage" Content="RichTextBox" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ShadowPage" Content="Shadow" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="SimpleStackPanelPage" Content="SimpleStackPanel" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="SliderPage" Content="Slider" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="SplitViewPage" Content="SplitView" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="StatusBarPage" Content="StatusBar" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="TabControlPage" Content="TabControl" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="TextBoxPage" Content="TextBox" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ThemeResourcesPage" Content="ThemeResources" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ThemesPage" Content="Themes" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ThreadedUIPage" Content="ThreadedUI" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ToggleSwitchPage" Content="ToggleSwitch" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ToolBarPage" Content="ToolBar" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ToolTipPage" Content="ToolTip" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="TreeViewPage" Content="TreeView" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="WindowPage" Content="Window" />
         </ui:NavigationView.MenuItems>
 
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
@@ -62,4 +197,5 @@
             </hc:EventTrigger>
         </hc:Interaction.Triggers>
     </ui:NavigationView>
+        </Grid>
 </Window>

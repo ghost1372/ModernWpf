@@ -1,7 +1,6 @@
 ﻿using ModernWpf.Media.Animation;
 using System.Windows;
 using System.Windows.Controls;
-using Page = ModernWpf.Controls.Page;
 
 namespace ModernWpf.Demo.Views
 {

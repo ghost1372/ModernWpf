@@ -2,11 +2,18 @@
 using Prism.DryIoc;
 using Prism.Ioc;
 using System.Windows;
+using Prism.Regions;
 
 namespace ModernWpf.Demo
 {
     public class Bootstrapper : PrismBootstrapper
     {
+        protected override void InitializeShell(DependencyObject shell)
+        {
+            base.InitializeShell(shell);
+            Container.Resolve<IRegionManager>().RequestNavigate("ContentRegion", "ControlPalettePage");
+        }
+
         protected override DependencyObject CreateShell()
         {
             return Container.Resolve<MainWindow>();
@@ -52,10 +59,23 @@ namespace ModernWpf.Demo
             containerRegistry.RegisterForNavigation<ProgressPage>();
             containerRegistry.RegisterForNavigation<ProgressRingPerfPage>();
             containerRegistry.RegisterForNavigation<RadioButtonsPage>();
-            
-           
-            containerRegistry.RegisterForNavigation<TabControlDemo>();
-            containerRegistry.RegisterForNavigation<SplitViewDemo>();
+            containerRegistry.RegisterForNavigation<RatingControlPage>();
+            containerRegistry.RegisterForNavigation<RichTextBoxPage>();
+            containerRegistry.RegisterForNavigation<ShadowPage>();
+            containerRegistry.RegisterForNavigation<SimpleStackPanelPage>();
+            containerRegistry.RegisterForNavigation<SliderPage>();
+            containerRegistry.RegisterForNavigation<SplitViewPage>();
+            containerRegistry.RegisterForNavigation<StatusBarPage>();
+            containerRegistry.RegisterForNavigation<TabControlPage>();
+            containerRegistry.RegisterForNavigation<TextBoxPage>();
+            containerRegistry.RegisterForNavigation<ThemeResourcesPage>();
+            containerRegistry.RegisterForNavigation<ThemesPage>();
+            containerRegistry.RegisterForNavigation<ThreadedUIPage>();
+            containerRegistry.RegisterForNavigation<ToggleSwitchPage>();
+            containerRegistry.RegisterForNavigation<ToolBarPage>();
+            containerRegistry.RegisterForNavigation<ToolTipPage>();
+            containerRegistry.RegisterForNavigation<TreeViewPage>();
+            containerRegistry.RegisterForNavigation<WindowPage>();
         }
     }
 }

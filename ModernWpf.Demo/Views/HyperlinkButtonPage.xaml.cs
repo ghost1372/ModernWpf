@@ -1,13 +1,11 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Prism.Regions;
+﻿using Prism.Regions;
+using System.Windows;
 
 namespace ModernWpf.Demo.Views
 {
     public partial class HyperlinkButtonPage
     {
-        private IRegionManager region;
+        private readonly IRegionManager region;
         public HyperlinkButtonPage(IRegionManager regionManager)
         {
             InitializeComponent();

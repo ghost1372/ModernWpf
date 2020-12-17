@@ -9,9 +9,9 @@ namespace ModernWpf.Demo.Views
     /// <summary>
     ///     Interaction logic for SplitViewDemo.xaml
     /// </summary>
-    public partial class SplitViewDemo : UserControl
+    public partial class SplitViewPage : UserControl
     {
-        public SplitViewDemo()
+        public SplitViewPage()
         {
             InitializeComponent();
         }
