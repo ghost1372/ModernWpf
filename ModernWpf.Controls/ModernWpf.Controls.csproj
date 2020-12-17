@@ -5,24 +5,15 @@
 	<UseWPF>true</UseWPF>
 	<LangVersion>8.0</LangVersion>
 	<MSBuildWarningsAsMessages>NETSDK1138</MSBuildWarningsAsMessages>
-	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	<PackageId>ModernWpf.Controls</PackageId>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageId>ModernWpfUi</PackageId>
 	<Authors>Mahdi Hosseini</Authors>
 	<Product>ModernWpf</Product>
 	<Description>This project is based on the original version (https://github.com/Kinnara/ModernWpf) 
-Dependency on WinRT has been removed
-
-Available Controls and Styles:
-AutoSuggestBox
-Flyout
-ListView
-GridView
-MenuFlyout
-NavigationView
-SplitView
-ProgressBar
-Repeater
-Light/Dark/HighContrast Theme</Description>
+Dependency on WinRT has been removed</Description>
+	<PackageIcon>icon.png</PackageIcon>
+	<RepositoryUrl></RepositoryUrl>
+	<PackageTags></PackageTags>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 	<NoWarn>4130</NoWarn>
@@ -38,6 +29,10 @@ Light/Dark/HighContrast Theme</Description>
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Include="C:\Users\Mahdi\Desktop\icon.png">
+		  <Pack>True</Pack>
+		  <PackagePath></PackagePath>
+		</None>
 		<None Include="Properties\DesignTimeResources.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</None>
