@@ -10,9 +10,18 @@
         <ResourceDictionary Source="Styles/CheckBox.xaml" />
         <ResourceDictionary Source="Styles/ComboBox.xaml" />
         <ResourceDictionary Source="Styles/ContextMenu.xaml" />
+        <ResourceDictionary Source="Styles/CommandBar.xaml" />
+        <ResourceDictionary Source="Styles/DataGrid.xaml" />
+        <ResourceDictionary Source="Styles/DatePicker.xaml" />
+        <ResourceDictionary Source="Styles/Expander.xaml" />
         <ResourceDictionary Source="Styles/FontIconFallback.xaml" />
         <ResourceDictionary Source="Styles/Frame.xaml" />
+        <ResourceDictionary Source="Styles/GridSplitter.xaml" />
         <ResourceDictionary Source="Styles/GroupBox.xaml" />
+        <ResourceDictionary Source="Styles/GroupItem.xaml" />
+        <ResourceDictionary Source="Styles/Hyperlink.xaml" />
+        <ResourceDictionary Source="Styles/Label.xaml" />
+        <ResourceDictionary Source="Styles/ListBox.xaml" />
         <ResourceDictionary Source="Styles/ListView.xaml" />
         <ResourceDictionary Source="Styles/ListViewHeaderItem.xaml" />
         <ResourceDictionary Source="Styles/Menu.xaml" />
@@ -20,16 +29,27 @@
         <ResourceDictionary Source="Styles/NavigationBackButton.xaml" />
         <ResourceDictionary Source="Styles/NavigationView.xaml" />
         <ResourceDictionary Source="Styles/Page.xaml" />
+        <ResourceDictionary Source="Styles/PasswordBox.xaml" />
         <ResourceDictionary Source="Styles/Pivot.xaml" />
         <ResourceDictionary Source="Styles/ProgressBar.xaml" />
         <ResourceDictionary Source="Styles/RadioButton.xaml" />
+        <ResourceDictionary Source="Styles/RatingControl.xaml" />
+        <ResourceDictionary Source="Styles/RepeatButton.xaml" />
+        <ResourceDictionary Source="Styles/ResizeGrip.xaml" />
+        <ResourceDictionary Source="Styles/RichTextBox.xaml" />
         <ResourceDictionary Source="Styles/ScrollBar.xaml" />
         <ResourceDictionary Source="Styles/ScrollViewer.xaml" />
+        <ResourceDictionary Source="Styles/Slider.xaml" />
+        <ResourceDictionary Source="Styles/StatusBar.xaml" />
         <ResourceDictionary Source="Styles/TabControl.xaml" />
         <ResourceDictionary Source="Styles/TextContextMenu.xaml" />
         <ResourceDictionary Source="Styles/TitleBarButton.xaml" />
         <ResourceDictionary Source="Styles/TitleBarControl.xaml" />
+        <ResourceDictionary Source="Styles/TimePicker.xaml" />
         <ResourceDictionary Source="Styles/ToggleButton.xaml" />
+        <ResourceDictionary Source="Styles/ToolTip.xaml" />
+        <ResourceDictionary Source="Styles/TreeView.xaml" />
+        <ResourceDictionary Source="Styles/Window.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <m:StaticResource x:Key="ContentControlThemeFontFamily" ResourceKey="{x:Static SystemFonts.MessageFontFamilyKey}" />
