@@ -53,6 +53,7 @@ namespace ModernWpf.Demo
             containerRegistry.RegisterForNavigation<NumberBoxPage>();
             containerRegistry.RegisterForNavigation<PageTransitionPage>();
             containerRegistry.RegisterForNavigation<PasswordBoxPage>();
+            containerRegistry.RegisterForNavigation<PersianToolkit>();
             containerRegistry.RegisterForNavigation<PersonPicturePage>();
             containerRegistry.RegisterForNavigation<PivotPage>();
             containerRegistry.RegisterForNavigation<PopupPlacementPage>();

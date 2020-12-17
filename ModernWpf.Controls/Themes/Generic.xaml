@@ -20,6 +20,8 @@
         <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/MenuFlyout.xaml" />
         <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/NavigationView.xaml" />
         <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/NumberBox.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/PersianCalendar.xaml" />
+        <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/PersianDatePicker.xaml" />
         <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/PersonPicture.xaml" />
         <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/ProgressRing.xaml" />
         <ResourceDictionary Source="/ModernWpf.Controls;component/Styles/RadioButtons.xaml" />

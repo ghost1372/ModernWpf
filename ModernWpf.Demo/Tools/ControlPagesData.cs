@@ -43,6 +43,7 @@ namespace ModernWpf.Demo.Tools
             AddPage(typeof(NavigationViewPage));
             AddPage(typeof(NumberBoxPage));
             AddPage(typeof(PasswordBoxPage));
+            AddPage(typeof(PersianToolkit));
             AddPage(typeof(PersonPicturePage));
             AddPage(typeof(PopupPlacementPage));
             AddPage(typeof(ProgressPage), "Progress Controls");

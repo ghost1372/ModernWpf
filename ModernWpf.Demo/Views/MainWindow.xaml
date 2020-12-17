@@ -165,6 +165,7 @@
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="NumberBoxPage" Content="NumberBox" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PageTransitionPage" Content="PageTransition" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PasswordBoxPage" Content="PasswordBox" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PersianToolkit" Content="PersianToolkit" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PersonPicturePage" Content="PersonPicture" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PivotPage" Content="Pivot" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PopupPlacementPage" Content="PopupPlacement" />
