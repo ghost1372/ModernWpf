@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ModernWpf.Demo.Views.NavigationViewDemo"
+﻿<UserControl x:Class="ModernWpf.Demo.Views.NavigationViewPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:converters="clr-namespace:ModernWpf.Demo.Tools"

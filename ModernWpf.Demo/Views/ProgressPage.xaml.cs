@@ -5,9 +5,9 @@ namespace ModernWpf.Demo.Views
     /// <summary>
     ///     Interaction logic for ProgressBar
     /// </summary>
-    public partial class ProgressBarDemo : UserControl
+    public partial class ProgressPage : UserControl
     {
-        public ProgressBarDemo()
+        public ProgressPage()
         {
             InitializeComponent();
         }

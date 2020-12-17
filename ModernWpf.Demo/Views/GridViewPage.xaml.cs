@@ -11,10 +11,10 @@ namespace ModernWpf.Demo.Views
     /// <summary>
     /// Interaction logic for GridViewDemo.xaml
     /// </summary>
-    public partial class GridViewDemo : UserControl
+    public partial class GridViewPage : UserControl
     {
         WrapPanel StyledGridIWG;
-        public GridViewDemo()
+        public GridViewPage()
         {
             InitializeComponent();
             this.DataContext = this;

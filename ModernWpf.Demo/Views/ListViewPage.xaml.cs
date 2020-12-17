@@ -13,9 +13,9 @@ namespace ModernWpf.Demo.Views
     /// <summary>
     ///     Interaction logic for ListView.xaml
     /// </summary>
-    public partial class ListViewDemo : UserControl
+    public partial class ListViewPage : UserControl
     {
-        public ListViewDemo()
+        public ListViewPage()
         {
             InitializeComponent();
             Loaded += ListViewDemo_Loaded;

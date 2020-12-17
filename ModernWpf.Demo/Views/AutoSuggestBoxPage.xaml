@@ -43,9 +43,23 @@
                     <ui:AutoSuggestBox
                         x:Name="Control2"
                         PlaceholderText="Type a control name"
+                        TextChanged="Control2_TextChanged"
                         QueryIcon="Find"
+                        QuerySubmitted="Control2_QuerySubmitted"
+                        SuggestionChosen="Control2_SuggestionChosen"
                         Width="300"
                         HorizontalAlignment="Left" />
+                    <StackPanel
+                        x:Name="ControlDetails"
+                        Grid.Row="1"
+                        HorizontalAlignment="Left"
+                        Visibility="Collapsed"
+                        Margin="0,8,0,0">
+                        <TextBlock
+                            x:Name="ControlTitle"
+                            Style="{StaticResource BaseTextBlockStyle}" />
+                        <ui:HyperlinkButton x:Name="ControlLink" Click="ControlLink_Click" />
+                    </StackPanel>
                 </Grid>
             </ui:ControlExample>
         </ui:SimpleStackPanel>

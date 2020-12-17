@@ -30,14 +30,31 @@ namespace ModernWpf.Demo
             containerRegistry.RegisterForNavigation<ControlPalettePage>();
             containerRegistry.RegisterForNavigation<DataGridPage>();
             containerRegistry.RegisterForNavigation<DatePickerPage>();
-            containerRegistry.RegisterForNavigation<NavigationViewDemo>();
-            containerRegistry.RegisterForNavigation<ProgressBarDemo>();
-            containerRegistry.RegisterForNavigation<InputsDemo>();
-            containerRegistry.RegisterForNavigation<FlyoutDemo>();
-            containerRegistry.RegisterForNavigation<ListViewDemo>();
-            containerRegistry.RegisterForNavigation<GridViewDemo>();
+            containerRegistry.RegisterForNavigation<ExpanderPage>();
+            containerRegistry.RegisterForNavigation<FlyoutPage>();
+            containerRegistry.RegisterForNavigation<GridSplitterPage>();
+            containerRegistry.RegisterForNavigation<GridViewPage>();
+            containerRegistry.RegisterForNavigation<GroupBoxPage>();
+            containerRegistry.RegisterForNavigation<HyperlinkButtonPage>();
+            containerRegistry.RegisterForNavigation<ItemsRepeaterPage>();
+            containerRegistry.RegisterForNavigation<ListBoxPage>();
+            containerRegistry.RegisterForNavigation<ListViewPage>();
+            containerRegistry.RegisterForNavigation<ListView2Page>();
+            containerRegistry.RegisterForNavigation<MenuFlyoutPage>();
+            containerRegistry.RegisterForNavigation<MenuPage>();
+            containerRegistry.RegisterForNavigation<NavigationViewPage>();
+            containerRegistry.RegisterForNavigation<NumberBoxPage>();
+            containerRegistry.RegisterForNavigation<PageTransitionPage>();
+            containerRegistry.RegisterForNavigation<PasswordBoxPage>();
+            containerRegistry.RegisterForNavigation<PersonPicturePage>();
+            containerRegistry.RegisterForNavigation<PivotPage>();
+            containerRegistry.RegisterForNavigation<PopupPlacementPage>();
+            containerRegistry.RegisterForNavigation<ProgressPage>();
+            containerRegistry.RegisterForNavigation<ProgressRingPerfPage>();
+            containerRegistry.RegisterForNavigation<RadioButtonsPage>();
+            
+           
             containerRegistry.RegisterForNavigation<TabControlDemo>();
-            containerRegistry.RegisterForNavigation<RepeaterDemo>();
             containerRegistry.RegisterForNavigation<SplitViewDemo>();
         }
     }

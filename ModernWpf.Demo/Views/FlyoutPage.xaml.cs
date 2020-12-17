@@ -7,9 +7,9 @@ namespace ModernWpf.Demo.Views
     /// <summary>
     ///     Interaction logic for Flyout.xaml
     /// </summary>
-    public partial class FlyoutDemo : UserControl
+    public partial class FlyoutPage : UserControl
     {
-        public FlyoutDemo()
+        public FlyoutPage()
         {
             InitializeComponent();
         }

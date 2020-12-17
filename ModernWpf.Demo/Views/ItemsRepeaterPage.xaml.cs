@@ -8,14 +8,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
-using static ModernWpf.Demo.Views.ListViewDemo;
 
 namespace ModernWpf.Demo.Views
 {
     /// <summary>
     ///     Interaction logic for RepeaterDemo.xaml
     /// </summary>
-    public partial class RepeaterDemo : UserControl
+    public partial class ItemsRepeaterPage : UserControl
     {
         private readonly StackLayout HorizontalStackLayout;
         private readonly int MaxLength = 425;
@@ -27,7 +26,7 @@ namespace ModernWpf.Demo.Views
         public ObservableCollection<Bar> BarItems;
         private bool isHorizontal;
 
-        public RepeaterDemo()
+        public ItemsRepeaterPage()
         {
             InitializeComponent();
             VerticalStackLayout = (StackLayout)Resources[nameof(VerticalStackLayout)];
@@ -39,7 +38,7 @@ namespace ModernWpf.Demo.Views
             repeater.ItemsSource = BarItems;
         }
 
-        ~RepeaterDemo()
+        ~ItemsRepeaterPage()
         {
         }
 
@@ -201,18 +200,18 @@ namespace ModernWpf.Demo.Views
 
         private async void OnLoaded(object sender, RoutedEventArgs e)
         {
-            DataContext = await Contact.GetContactsAsync();
+            DataContext = await ListViewPage.Contact.GetContactsAsync();
         }
 
         private void ChangeFirstItemButton_Click(object sender, RoutedEventArgs e)
         {
-            var contacts = (ObservableCollection<Contact>)DataContext;
-            contacts[0] = new Contact("First", "Last", "Line 1\nLine 2");
+            var contacts = (ObservableCollection<ListViewPage.Contact>)DataContext;
+            contacts[0] = new ListViewPage.Contact("First", "Last", "Line 1\nLine 2");
         }
 
         private void ModifyFirstItemButton_Click(object sender, RoutedEventArgs e)
         {
-            var contacts = (ObservableCollection<Contact>)DataContext;
+            var contacts = (ObservableCollection<ListViewPage.Contact>)DataContext;
             var firstContact = contacts[0];
             if (firstContact.Company.Contains("\n"))
             {

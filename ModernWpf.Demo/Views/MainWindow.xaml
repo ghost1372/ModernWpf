@@ -29,13 +29,28 @@
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ControlPalettePage" Content="ControlPalette" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="DataGridPage" Content="DataGrid" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="DatePickerPage" Content="DatePicker" />
-            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="FlyoutDemo" Content="Flyout" />
-            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="GridViewDemo" Content="GridView" />
-            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="InputsDemo" Content="Inputs" />
-            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ListViewDemo" Content="ListView" />
-            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="NavigationViewDemo" Content="NavigationView" />
-            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ProgressBarDemo" Content="ProgressBar" />
-            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="RepeaterDemo" Content="Repeater" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ExpanderPage" Content="Expander" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="FlyoutPage" Content="Flyout" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="GridSplitterPage" Content="GridSplitter" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="GridViewPage" Content="GridView" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="GroupBoxPage" Content="GroupBox" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="HyperlinkButtonPage" Content="HyperlinkButton" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ItemsRepeaterPage" Content="ItemsRepeater" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ListBoxPage" Content="ListBox" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ListViewPage" Content="ListView" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ListView2Page" Content="ListView (ModernWpf)" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="MenuFlyoutPage" Content="MenuFlyout" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="MenuPage" Content="Menu" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="NavigationViewPage" Content="NavigationView" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="NumberBoxPage" Content="NumberBox" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PageTransitionPage" Content="PageTransition" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PasswordBoxPage" Content="PasswordBox" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PersonPicturePage" Content="PersonPicture" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PivotPage" Content="Pivot" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="PopupPlacementPage" Content="PopupPlacement" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ProgressPage" Content="ProgressBar" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="ProgressRingPerfPage" Content="ProgressRing" />
+            <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="RadioButtonsPage" Content="RadioButtons" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="SplitViewDemo" Content="SplitView" />
             <ui:NavigationViewItem IsTabStop="False" Icon="home" Tag="TabControlDemo" Content="TabControl" />
         </ui:NavigationView.MenuItems>

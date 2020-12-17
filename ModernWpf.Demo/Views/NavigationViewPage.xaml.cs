@@ -14,7 +14,7 @@ namespace ModernWpf.Demo.Views
     /// <summary>
     ///     Interaction logic for NavigationView
     /// </summary>
-    public partial class NavigationViewDemo : UserControl
+    public partial class NavigationViewPage : UserControl
     {
         public static bool CameFromToggle = false;
 
@@ -22,7 +22,7 @@ namespace ModernWpf.Demo.Views
 
         public VirtualKey ArrowKey;
 
-        public NavigationViewDemo()
+        public NavigationViewPage()
         {
             DataContext = this;
             InitializeComponent();
