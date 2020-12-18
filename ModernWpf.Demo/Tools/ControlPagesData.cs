@@ -8,6 +8,7 @@ namespace ModernWpf.Demo.Tools
     {
         public ControlPagesData()
         {
+            AddPage(typeof(Overview));
             AddPage(typeof(ControlPalettePage), "Control Palette");
             AddPage(typeof(ThemesPage));
             AddPage(typeof(ThemeResourcesPage), "Theme Resources");

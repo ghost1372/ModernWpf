@@ -11,7 +11,7 @@ namespace ModernWpf.Demo
         protected override void InitializeShell(DependencyObject shell)
         {
             base.InitializeShell(shell);
-            Container.Resolve<IRegionManager>().RequestNavigate("ContentRegion", "ControlPalettePage");
+            Container.Resolve<IRegionManager>().RequestNavigate("ContentRegion", "Overview");
         }
 
         protected override DependencyObject CreateShell()
@@ -77,6 +77,7 @@ namespace ModernWpf.Demo
             containerRegistry.RegisterForNavigation<ToolTipPage>();
             containerRegistry.RegisterForNavigation<TreeViewPage>();
             containerRegistry.RegisterForNavigation<WindowPage>();
+            containerRegistry.RegisterForNavigation<Overview>();
         }
     }
 }
