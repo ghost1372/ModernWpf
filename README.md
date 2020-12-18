@@ -20,6 +20,15 @@ The official version is depends on WinRT, This version has removed this dependen
 
 ## Usage
 
+### Easy Way
+
+[Download and Insatall VSIX Extension](https://marketplace.visualstudio.com/items?itemName=MahdiHosseini.ModernWpf)
+> **_NOTE:_**  VSIX Extension Recommended, because Intellisense Enabled by Default.
+
+![VSIX](https://user-images.githubusercontent.com/9213496/102594457-79ee6d80-412b-11eb-902f-648a410adcd6.png)
+
+### Manual
+
 Step 1: Add a reference to ModernWpfUis or search for ModernWpfUis on the nuget; 
 
 ```Install-Package ModernWpfUis```
