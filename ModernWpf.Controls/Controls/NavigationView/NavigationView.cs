@@ -1142,6 +1142,11 @@ namespace ModernWpf.Controls
             while (!IsRootItemsRepeater(parentIR))
             {
                 currentNvib = GetParentNavigationViewItemForContainer(currentNvib);
+                if (currentNvib is null)
+                {
+                    return null;
+                }
+
                 parentIR = GetParentItemsRepeaterForContainer(currentNvib);
             }
             return parentIR;
@@ -1435,10 +1440,10 @@ namespace ModernWpf.Controls
             {
                 m_lastSelectedItemPendingAnimationInTopNav = null;
                 // WPF: Wait for layout
-                //Dispatcher.BeginInvoke(() =>
-                //{
-                //    AnimateSelectionChanged(lastSelectedItemInTopNav);
-                //}, DispatcherPriority.Send);
+                Dispatcher.BeginInvoke(() =>
+                {
+                    AnimateSelectionChanged(lastSelectedItemInTopNav);
+                }, DispatcherPriority.Send);
             }
 
             if (m_OrientationChangedPendingAnimation)
@@ -4194,14 +4199,14 @@ namespace ModernWpf.Controls
         {
             if ((bool)e.NewValue)
             {
-                //Dispatcher.BeginInvoke(() =>
-                //{
-                //    var repeater = (ItemsRepeater)sender;
-                //    if (repeater.IsLoaded)
-                //    {
-                //        OnRepeaterLoaded(sender, null);
-                //    }
-                //}, DispatcherPriority.Loaded);
+                Dispatcher.BeginInvoke(() =>
+                {
+                    var repeater = (ItemsRepeater)sender;
+                    if (repeater.IsLoaded)
+                    {
+                        OnRepeaterLoaded(sender, null);
+                    }
+                }, DispatcherPriority.Loaded);
             }
         }
 
