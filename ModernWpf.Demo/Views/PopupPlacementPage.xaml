@@ -25,7 +25,7 @@
                         <Border>
                             <ui:ThemeShadowChrome>
                                 <Border
-                                    Background="{DynamicResource SystemControlTransientBackgroundBrush}"
+                                    Background="{DynamicResource AcrylicBackgroundFillColorDefaultBrush}"
                                     BorderBrush="{DynamicResource SystemControlHighlightAccentBrush}"
                                     BorderThickness="5"
                                     Width="100"

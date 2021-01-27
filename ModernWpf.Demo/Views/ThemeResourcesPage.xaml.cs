@@ -256,7 +256,7 @@ namespace ModernWpf.Demo.Views
             "SystemControlTransparentBrush",
             "SystemControlErrorTextForegroundBrush",
             "SystemControlTransientBorderBrush",
-            "SystemControlTransientBackgroundBrush",
+            "AcrylicBackgroundFillColorDefaultBrush",
             "SystemControlDescriptionTextForegroundBrush"
         };
 
