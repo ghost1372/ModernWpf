@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+	<TargetFrameworks>net452;net46;net462;net47;netcoreapp3.0;netcoreapp3.1;net5.0-windows10.0.18362.0</TargetFrameworks>
+	<UseWPF>true</UseWPF>
+	<NeutralLanguage>en-US</NeutralLanguage>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<PackageId>ModernWpfUi.MahApps</PackageId>
+	<Description>Styles to help integrate ModernWPF with MahApps.Metro without WinRT.</Description>
+	<AssemblyVersion>1.2.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Page Remove="Properties\DesignTimeResources.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Properties\DesignTimeResources.xaml">
+			<ContainsDesignTimeResources>True</ContainsDesignTimeResources>
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MahApps.Metro" Version="2.4.3" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\ModernWpf\ModernWpf.csproj">
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
+		<ProjectReference Include="..\ModernWpf.Controls\ModernWpf.Controls.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Resources\Strings.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Strings.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Resources\Strings.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Strings.Designer.cs</LastGenOutput>
+			<CustomToolNamespace>ModernWpf.MahApps</CustomToolNamespace>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>
