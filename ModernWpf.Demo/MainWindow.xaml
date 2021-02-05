@@ -8,6 +8,7 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:hc="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:sc="clr-namespace:ModernWpf.Demo.Tools"
+        ui:WindowHelper.UseModernWindowStyle="True"
         ui:ThemeManager.IsThemeAware="True"
         Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
         Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"

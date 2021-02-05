@@ -4,6 +4,7 @@
     <UseWPF>true</UseWPF>
 	<LangVersion>8.0</LangVersion>
 	<MSBuildWarningsAsMessages>NETSDK1138</MSBuildWarningsAsMessages>
+	<Version>1.2.0</Version>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<NoWarn>4130;0162,0169,0414;0649;0067</NoWarn>

@@ -6,8 +6,8 @@
     xmlns:primitives="clr-namespace:ModernWpf.Controls.Primitives">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Button.xaml"/>
-        <ResourceDictionary Source="TextStyles.xaml"/>
+        <ResourceDictionary Source="Button.xaml" />
+        <ResourceDictionary Source="TextStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Thickness x:Key="NavigationViewAutoSuggestBoxMargin">10,0,16,0</Thickness>

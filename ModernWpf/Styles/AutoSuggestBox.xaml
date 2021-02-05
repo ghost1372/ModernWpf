@@ -6,7 +6,7 @@
     xmlns:primitives="clr-namespace:ModernWpf.Controls.Primitives">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Button.xaml"/>
+        <ResourceDictionary Source="/ModernWpf;component/Styles/Button.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Thickness x:Key="AutoSuggestBoxTopHeaderMargin">0,0,0,4</Thickness>

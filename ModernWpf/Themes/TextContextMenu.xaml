@@ -4,7 +4,7 @@
     xmlns:local="clr-namespace:ModernWpf.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ContextMenu.xaml" />
+        <ResourceDictionary Source="/ModernWpf;component/Styles/ContextMenu.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="local:TextContextMenu" BasedOn="{StaticResource ContextMenuStyleBase}" />
