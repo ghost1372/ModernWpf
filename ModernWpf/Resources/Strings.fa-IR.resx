@@ -118,27 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppBarMoreButtonClosedToolTip" xml:space="preserve">
-    <value>See more</value>
+    <value>بیشتر</value>
     <comment>319-5102</comment>
   </data>
   <data name="AppBarMoreButtonName" xml:space="preserve">
-    <value>More app bar</value>
+    <value>بیشتر</value>
     <comment>332-5305</comment>
   </data>
   <data name="AppBarMoreButtonOpenToolTip" xml:space="preserve">
-    <value>See less</value>
+    <value>کمتر</value>
     <comment>320-5109</comment>
   </data>
   <data name="IgnoreMenuItemLabel" xml:space="preserve">
-    <value>Ignore</value>
+    <value>رد کردن</value>
     <comment>5580</comment>
   </data>
   <data name="ToggleSwitchOff" xml:space="preserve">
-    <value>Off</value>
+    <value>خاموش</value>
     <comment>Default text for "Off" for ToggleSwitch.</comment>
   </data>
   <data name="ToggleSwitchOn" xml:space="preserve">
-    <value>On</value>
+    <value>روشن</value>
     <comment>Default text for "On" for ToggleSwitch.</comment>
   </data>
 </root>

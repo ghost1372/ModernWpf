@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernWpf.MahApps", "Modern
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernWpf.MahApps.Demo", "ModernWpf.MahApps.Demo\ModernWpf.MahApps.Demo.csproj", "{FB3968AC-6D92-4D2B-B73F-7798ACC6FEEE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinUIResourcesConverter", "tools\WinUIResourcesConverter\WinUIResourcesConverter.csproj", "{1A3CE650-590B-4293-8FD2-00DFBB33F59D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FB3968AC-6D92-4D2B-B73F-7798ACC6FEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB3968AC-6D92-4D2B-B73F-7798ACC6FEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB3968AC-6D92-4D2B-B73F-7798ACC6FEEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A3CE650-590B-4293-8FD2-00DFBB33F59D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A3CE650-590B-4293-8FD2-00DFBB33F59D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A3CE650-590B-4293-8FD2-00DFBB33F59D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A3CE650-590B-4293-8FD2-00DFBB33F59D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

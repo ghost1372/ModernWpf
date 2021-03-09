@@ -2,7 +2,7 @@
 	<PropertyGroup>
     <TargetFrameworks>netcoreapp3.0;net5.0-windows;net45;net462</TargetFrameworks>
     <UseWPF>true</UseWPF>
-	<LangVersion>8.0</LangVersion>
+	<LangVersion>latest</LangVersion>
 	<MSBuildWarningsAsMessages>NETSDK1138</MSBuildWarningsAsMessages>
 	<Version>1.2.0</Version>
 	</PropertyGroup>
@@ -34,5 +34,9 @@
 			<LastGenOutput>Strings.Designer.cs</LastGenOutput>
 			<CustomToolNamespace>ModernWpf</CustomToolNamespace>
 		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Controls\TextContextMenu\" />
 	</ItemGroup>
 </Project>

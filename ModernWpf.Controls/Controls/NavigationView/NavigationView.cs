@@ -20,6 +20,7 @@ using ModernWpf.Automation.Peers;
 using ModernWpf.Input;
 using ModernWpf.Media.Animation;
 using static CppWinRTHelpers;
+using static ModernWpf.ResourceAccessor;
 
 namespace ModernWpf.Controls
 {
@@ -106,6 +107,8 @@ namespace ModernWpf.Controls
         const int s_itemNotFound = -1;
 
         static readonly Size c_infSize = new Size(double.PositiveInfinity, double.PositiveInfinity);
+
+        private static readonly ResourceAccessor ResourceAccessor = new ResourceAccessor(typeof(NavigationView));
 
         /*
         ~NavigationView()
@@ -546,8 +549,8 @@ namespace ModernWpf.Controls
             if (GetTemplateChild(c_topNavOverflowButton) is Button topNavOverflowButton)
             {
                 m_topNavOverflowButton = topNavOverflowButton;
-                AutomationProperties.SetName(topNavOverflowButton, Strings.NavigationOverflowButtonName);
-                topNavOverflowButton.Content = Strings.NavigationOverflowButtonText;
+                AutomationProperties.SetName(topNavOverflowButton, ResourceAccessor.GetLocalizedStringResource(SR_NavigationOverflowButtonName));
+                topNavOverflowButton.Content = ResourceAccessor.GetLocalizedStringResource(SR_NavigationOverflowButtonText);
                 // TODO: WPF - Header Animation
                 /*
                 auto visual = winrt::ElementCompositionPreview::GetElementVisual(topNavOverflowButton);
@@ -558,7 +561,7 @@ namespace ModernWpf.Controls
                 if (toolTip is null)
                 {
                     var tooltip = new ToolTip();
-                    tooltip.Content = Strings.NavigationOverflowButtonToolTip;
+                    tooltip.Content = ResourceAccessor.GetLocalizedStringResource(SR_NavigationOverflowButtonToolTip);
                     ToolTipService.SetToolTip(topNavOverflowButton, tooltip);
                 }
 
@@ -650,7 +653,7 @@ namespace ModernWpf.Controls
                 m_paneSearchButton = button;
                 button.Click += OnPaneSearchButtonClick;
 
-                var searchButtonName = Strings.NavigationViewSearchButtonName;
+                var searchButtonName = ResourceAccessor.GetLocalizedStringResource(SR_NavigationViewSearchButtonName);
                 AutomationProperties.SetName(button, searchButtonName);
                 var toolTip = new ToolTip();
                 toolTip.Content = searchButtonName;
@@ -662,7 +665,7 @@ namespace ModernWpf.Controls
                 m_backButton = backButton;
                 backButton.Click += OnBackButtonClicked;
 
-                string navigationName = Strings.NavigationBackButtonName;
+                string navigationName = ResourceAccessor.GetLocalizedStringResource(SR_NavigationBackButtonName);
                 AutomationProperties.SetName(backButton, navigationName);
 
                 WindowChrome.SetIsHitTestVisibleInChrome(backButton, true);
@@ -684,7 +687,7 @@ namespace ModernWpf.Controls
 
             if (GetTemplateChild(c_navViewBackButtonToolTip) is ToolTip backButtonToolTip)
             {
-                string navigationBackButtonToolTip = Strings.NavigationBackButtonToolTip;
+                string navigationBackButtonToolTip = ResourceAccessor.GetLocalizedStringResource(SR_NavigationBackButtonToolTip);
                 backButtonToolTip.Content = navigationBackButtonToolTip;
             }
 
@@ -693,7 +696,7 @@ namespace ModernWpf.Controls
                 m_closeButton = closeButton;
                 closeButton.Click += OnPaneToggleButtonClick;
 
-                string navigationName = Strings.NavigationCloseButtonName;
+                string navigationName = ResourceAccessor.GetLocalizedStringResource(SR_NavigationCloseButtonName);
                 AutomationProperties.SetName(closeButton, navigationName);
 
                 WindowChrome.SetIsHitTestVisibleInChrome(closeButton, true);
@@ -701,7 +704,7 @@ namespace ModernWpf.Controls
 
             if (GetTemplateChild(c_navViewCloseButtonToolTip) is ToolTip closeButtonToolTip)
             {
-                string navigationCloseButtonToolTip = Strings.NavigationButtonOpenName;
+                string navigationCloseButtonToolTip = ResourceAccessor.GetLocalizedStringResource(SR_NavigationButtonOpenName);
                 closeButtonToolTip.Content = navigationCloseButtonToolTip;
             }
 
@@ -1380,7 +1383,7 @@ namespace ModernWpf.Controls
             settingsItem.Icon = settingsIcon;
 
             // Do localization for settings item label and Automation Name
-            var localizedSettingsName = Strings.SettingsButtonName;
+            var localizedSettingsName = ResourceAccessor.GetLocalizedStringResource(SR_SettingsButtonName);
             AutomationProperties.SetName(settingsItem, localizedSettingsName);
             settingsItem.Tag = localizedSettingsName;
             UpdateSettingsItemToolTip();
@@ -1952,11 +1955,11 @@ namespace ModernWpf.Controls
             string navigationName;
             if (IsPaneOpen)
             {
-                navigationName = Strings.NavigationButtonOpenName;
+                navigationName = ResourceAccessor.GetLocalizedStringResource(SR_NavigationButtonOpenName);
             }
             else
             {
-                navigationName = Strings.NavigationButtonClosedName;
+                navigationName = ResourceAccessor.GetLocalizedStringResource(SR_NavigationButtonClosedName);
             }
 
             if (m_paneToggleButton is { } paneToggleButton)
@@ -1978,7 +1981,7 @@ namespace ModernWpf.Controls
                 }
                 else
                 {
-                    var localizedSettingsName = Strings.SettingsButtonName;
+                    var localizedSettingsName = ResourceAccessor.GetLocalizedStringResource(SR_SettingsButtonName);
                     var toolTip = new ToolTip();
                     toolTip.Content = localizedSettingsName;
                     ToolTipService.SetToolTip(settingsItem, toolTip);
