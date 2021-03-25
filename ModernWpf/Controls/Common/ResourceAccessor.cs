@@ -175,7 +175,7 @@ namespace ModernWpf
                 var assembly = _controlType.Assembly;
                 var assemblyName = assembly.GetName().Name;
                 var controlName = _controlType.Name;
-                var baseName = $"{assemblyName}.{controlName}.Strings.Resources";
+                var baseName = $"{assemblyName}.Controls.{controlName}.Strings.Resources";
                 _resourceManager = new ResourceManager(baseName, assembly);
             }
 
